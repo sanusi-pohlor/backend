@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\NewsController;
 
-Route::get('/data', 'NewsController@index');
-Route::post('/upload', 'NewsController@upload');
+Route::get('/data', [NewsController::class, 'index']);
+Route::post('/upload', [NewsController::class, 'upload']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

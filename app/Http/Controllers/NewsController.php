@@ -20,23 +20,28 @@ class NewsController extends Controller
         return response()->json($data, 200);
     }
     public function upload(Request $request)
-    {
-        $validatedData = $request->validate([
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
-        ]);
+{
+    $validatedData = $request->validate([
+        'title' => 'required|string',
+        'description' => 'required|string',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+    ]);
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $validatedData['image'] = $imagePath;
-        }
-
-        // You can now process and save the data to your database
-        // ...
-
-        return response()->json(['message' => 'Data received and processed'], 200);
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('images', 'public');
+        $validatedData['image'] = $imagePath;
     }
+
+    // Create a new News instance and save it to the database
+    $news = new News([
+        'title' => $validatedData['title'],
+        'description' => $validatedData['description'],
+        'image' => $validatedData['image'],
+    ]);
+    $news->save();
+
+    return response()->json(['message' => 'Data received and processed'], 200);
+}
     /**
      * Display a listing of the resource.
      */
