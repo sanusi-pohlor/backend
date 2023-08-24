@@ -6,10 +6,6 @@ use App\Models\News;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
-use Carbon\Carbon;
-
 class NewsController extends Controller
 {
     public function index()
