@@ -8,9 +8,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
-class AuthController extends Controller
+class RegisterController extends Controller
 {
-    public function register(Request $request)
+    public function Register(Request $request)
     {
         // $request->validate([
         //     'username' => 'required|max:255',
@@ -36,6 +36,6 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'User registered successfully',
             // 'user' => $user
-        ], 201);
+        ], 200);
     }
 }
