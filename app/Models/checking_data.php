@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class checking_data extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'username', 'lastName', 'email', 'password', 'phone_number', 'Id_line', 'province',
+        'che_d_id','che_d_format',
     ];
     
 }
