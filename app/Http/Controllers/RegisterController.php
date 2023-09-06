@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Users;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
@@ -22,7 +22,7 @@ class RegisterController extends Controller
         //     'province' => ['required', Rule::in(['Krabi', 'Chumphon', 'Trang', 'NakhonSiThammarat', 'Pattani', 'PhangNga', 'Phattalung', 'Phuket', 'Yala', 'Ranong', 'Songkhla', 'Satun', 'SuratThani'])],
         // ]);
 
-        $user = new User([
+        $user = new Users([
             'username' => $request['username'],
             'lastName' => $request['lastName'],
             'email' => $request['email'],

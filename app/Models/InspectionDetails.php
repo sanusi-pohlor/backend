@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class action_type extends Model
+class InspectionDetails extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'act_ty_id','act_ty_name',
+        'ins_dt_id','ins_dt_che_id','ins_dt_info_id','ins_dt_date','ins_dt_more'
     ];
-    
 }

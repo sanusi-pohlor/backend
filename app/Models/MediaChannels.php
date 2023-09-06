@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class data_characteristics extends Model
+class MediaChannels extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'data_cha_id','data_cha_name',
+        'med_c_id','med_c_name',
     ];
-    
 }
