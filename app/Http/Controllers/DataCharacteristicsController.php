@@ -9,8 +9,17 @@ class DataCharacteristicsController extends Controller // Update the controller 
 {
     public function index()
     {
-        $users = DataCharacteristics::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $DataCharacteristics = DataCharacteristics::all(); // Use the correct model name 'User'
+        return view('DataCharacteristics.index', ['DataCharacteristics' => $DataCharacteristics]); // Update the view name to 'users.index'
+    }
+
+    public function upload(Request $request)
+    {
+        $DataCharacteristics = new DataCharacteristics([
+            'data_cha_name' => $request['data_cha_name'],
+        ]);
+        $DataCharacteristics->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
@@ -24,19 +33,19 @@ class DataCharacteristicsController extends Controller // Update the controller 
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('DataCharacteristics.index')->with('success', 'DataCharacteristics created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = DataCharacteristics::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $DataCharacteristics = DataCharacteristics::find($id); // Use the correct model name 'User'
+        return view('DataCharacteristics.show', ['DataCharacteristics' => $DataCharacteristics]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = DataCharacteristics::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $DataCharacteristics = DataCharacteristics::find($id); // Use the correct model name 'User'
+        return view('DataCharacteristics.edit', ['DataCharacteristics' => $DataCharacteristics]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +54,14 @@ class DataCharacteristicsController extends Controller // Update the controller 
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('DataCharacteristics.show', $id)->with('success', 'DataCharacteristics updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = DataCharacteristics::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $DataCharacteristics = DataCharacteristics::find($id); // Use the correct model name 'User'
+        $DataCharacteristics->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('DataCharacteristics.index')->with('success', 'DataCharacteristics deleted successfully'); // Update the route name to 'users.index'
     }
 }

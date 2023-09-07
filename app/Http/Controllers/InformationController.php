@@ -9,13 +9,31 @@ class InformationController extends Controller // Update the controller class na
 {
     public function index()
     {
-        $users = Information::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $Information = Information::all(); // Use the correct model name 'User'
+        return view('Information.index', ['Information' => $Information]); // Update the view name to 'users.index'
+    }
+
+    public function upload(Request $request)
+    {
+        $Information = new Information([
+            'info_subp_id' => $request['info_subp_id'],
+            'info_vol_mem_id' => $request['info_vol_mem_id'],
+            'info_moti_id' => $request['info_moti_id'],
+            'info_act_id' => $request['info_act_id'],
+            'info_d_c_id' => $request['info_d_c_id'],
+            'info_det_cont' => $request['info_det_cont'],
+            'info_num_rep' => $request['info_num_rep'],
+            'info_date' => $request['info_date'],
+            'info_status' => $request['info_status'],
+            'info_cont_topic' => $request['info_cont_topic'],
+        ]);
+        $Information->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('users.create');
+        return view('Information.create');
     }
 
     public function store(Request $request)
@@ -24,19 +42,19 @@ class InformationController extends Controller // Update the controller class na
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('Information.index')->with('success', 'Information created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = Information::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $Information = Information::find($id); // Use the correct model name 'User'
+        return view('Information.show', ['Information' => $Information]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = Information::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $Information = Information::find($id); // Use the correct model name 'User'
+        return view('Information.edit', ['Information' => $Information]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +63,14 @@ class InformationController extends Controller // Update the controller class na
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('Information.show', $id)->with('success', 'Information updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = Information::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $Information = Information::find($id); // Use the correct model name 'User'
+        $Information->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('Information.index')->with('success', 'Information deleted successfully'); // Update the route name to 'users.index'
     }
 }

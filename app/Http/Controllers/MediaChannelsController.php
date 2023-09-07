@@ -9,13 +9,22 @@ class MediaChannelsController extends Controller // Update the controller class 
 {
     public function index()
     {
-        $users = MediaChannels::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $MediaChannels = MediaChannels::all(); // Use the correct model name 'User'
+        return view('MediaChannels.index', ['MediaChannels' => $MediaChannels]); // Update the view name to 'users.index'
+    }
+
+    public function upload(Request $request)
+    {
+        $MediaChannels = new MediaChannels([
+            'med_c_name' => $request['med_c_name'],
+        ]);
+        $MediaChannels->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('users.create');
+        return view('MediaChannels.create');
     }
 
     public function store(Request $request)
@@ -24,19 +33,19 @@ class MediaChannelsController extends Controller // Update the controller class 
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('MediaChannels.index')->with('success', 'MediaChannels created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = MediaChannels::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $MediaChannels = MediaChannels::find($id); // Use the correct model name 'User'
+        return view('MediaChannels.show', ['MediaChannels' => $MediaChannels]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = MediaChannels::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $MediaChannels = MediaChannels::find($id); // Use the correct model name 'User'
+        return view('MediaChannels.edit', ['MediaChannels' => $MediaChannels]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +54,14 @@ class MediaChannelsController extends Controller // Update the controller class 
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('MediaChannels.show', $id)->with('success', 'MediaChannels updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = MediaChannels::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $MediaChannels = MediaChannels::find($id); // Use the correct model name 'User'
+        $MediaChannels->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('MediaChannels.index')->with('success', 'MediaChannels deleted successfully'); // Update the route name to 'users.index'
     }
 }

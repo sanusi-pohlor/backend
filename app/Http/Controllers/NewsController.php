@@ -11,13 +11,24 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::all();
-        return view('news.index', ['news' => $news]);
+        $News = News::all();
+        return view('News.index', ['News' => $News]);
+    }
+
+    public function upload(Request $request)
+    {
+        $News = new News([
+            'title' => $request['title'],
+            'description' => $request['description'],
+            'image' => $request['image'],
+        ]);
+        $News->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('news.create');
+        return view('News.create');
     }
 
     public function store(Request $request)
@@ -25,19 +36,19 @@ class NewsController extends Controller
         // Validate and store a new news record
         // ...
 
-        return redirect()->route('news.index')->with('success', 'News created successfully');
+        return redirect()->route('News.index')->with('success', 'News created successfully');
     }
 
     public function show($id)
     {
-        $news = News::find($id);
-        return view('news.show', ['news' => $news]);
+        $News = News::find($id);
+        return view('News.show', ['News' => $News]);
     }
 
     public function edit($id)
     {
-        $news = News::find($id);
-        return view('news.edit', ['news' => $news]);
+        $News = News::find($id);
+        return view('News.edit', ['News' => $News]);
     }
 
     public function update(Request $request, $id)
@@ -45,14 +56,14 @@ class NewsController extends Controller
         // Validate and update the news record
         // ...
 
-        return redirect()->route('news.show', $id)->with('success', 'News updated successfully');
+        return redirect()->route('News.show', $id)->with('success', 'News updated successfully');
     }
 
     public function destroy($id)
     {
-        $news = News::find($id);
-        $news->delete();
+        $News = News::find($id);
+        $News->delete();
 
-        return redirect()->route('news.index')->with('success', 'News deleted successfully');
+        return redirect()->route('News.index')->with('success', 'News deleted successfully');
     }
 }

@@ -9,13 +9,23 @@ class ProblemManagementController extends Controller // Update the controller cl
 {
     public function index()
     {
-        $users = ProblemManagement::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $ProblemManagement = ProblemManagement::all(); // Use the correct model name 'User'
+        return view('ProblemManagement.index', ['ProblemManagement' => $ProblemManagement]); // Update the view name to 'users.index'
     }
+
+    public function upload(Request $request)
+    {
+        $ProblemManagement = new ProblemManagement([
+            'prob_m_way' => $request['prob_m_way'],
+        ]);
+        $ProblemManagement->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
+    }
+
 
     public function create()
     {
-        return view('users.create');
+        return view('ProblemManagement.create');
     }
 
     public function store(Request $request)
@@ -24,19 +34,19 @@ class ProblemManagementController extends Controller // Update the controller cl
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('ProblemManagement.index')->with('success', 'ProblemManagement created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = ProblemManagement::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $ProblemManagement = ProblemManagement::find($id); // Use the correct model name 'User'
+        return view('ProblemManagement.show', ['ProblemManagement' => $ProblemManagement]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = ProblemManagement::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $ProblemManagement = ProblemManagement::find($id); // Use the correct model name 'User'
+        return view('ProblemManagement.edit', ['ProblemManagement' => $ProblemManagement]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +55,14 @@ class ProblemManagementController extends Controller // Update the controller cl
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('ProblemManagement.show', $id)->with('success', 'ProblemManagement updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = ProblemManagement::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $ProblemManagement = ProblemManagement::find($id); // Use the correct model name 'User'
+        $ProblemManagement->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('ProblemManagement.index')->with('success', 'ProblemManagement deleted successfully'); // Update the route name to 'users.index'
     }
 }

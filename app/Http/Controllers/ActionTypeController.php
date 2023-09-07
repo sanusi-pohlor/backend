@@ -9,13 +9,23 @@ class ActionTypeController extends Controller // Update the controller class nam
 {
     public function index()
     {
-        $users = ActionType::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $ActionType = ActionType::all(); // Use the correct model name 'User'
+        return view('ActionType.index', ['ActionType' => $ActionType]); // Update the view name to 'users.index'
     }
+
+    public function upload(Request $request)
+    {
+        $ActionType = new ActionType([
+            'act_ty_name' => $request['act_ty_name'],
+        ]);
+        $ActionType->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
+    }
+
 
     public function create()
     {
-        return view('users.create');
+        return view('ActionType.create');
     }
 
     public function store(Request $request)
@@ -24,19 +34,19 @@ class ActionTypeController extends Controller // Update the controller class nam
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('ActionType.index')->with('success', 'ActionType created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = ActionType::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $ActionType = ActionType::find($id); // Use the correct model name 'User'
+        return view('ActionType.show', ['ActionType' => $ActionType]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = ActionType::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $ActionType = ActionType::find($id); // Use the correct model name 'User'
+        return view('ActionType.edit', ['ActionType' => $ActionType]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +55,14 @@ class ActionTypeController extends Controller // Update the controller class nam
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('ActionType.show', $id)->with('success', 'ActionType updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = ActionType::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $ActionType = ActionType::find($id); // Use the correct model name 'User'
+        $ActionType->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('ActionType.index')->with('success', 'ActionType deleted successfully'); // Update the route name to 'users.index'
     }
 }

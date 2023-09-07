@@ -9,13 +9,22 @@ class MotivationController extends Controller // Update the controller class nam
 {
     public function index()
     {
-        $users = Motivation::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $Motivation = Motivation::all(); // Use the correct model name 'User'
+        return view('Motivation.index', ['Motivation' => $Motivation]); // Update the view name to 'users.index'
+    }
+
+    public function upload(Request $request)
+    {
+        $Motivation = new Motivation([
+            'moti_name' => $request['moti_name'],
+        ]);
+        $Motivation->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('users.create');
+        return view('Motivation.create');
     }
 
     public function store(Request $request)
@@ -24,19 +33,19 @@ class MotivationController extends Controller // Update the controller class nam
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('Motivation.index')->with('success', 'Motivation created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = Motivation::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $Motivation = Motivation::find($id); // Use the correct model name 'User'
+        return view('Motivation.show', ['user' => $Motivation]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = Motivation::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $Motivation = Motivation::find($id); // Use the correct model name 'User'
+        return view('Motivation.edit', ['Motivation' => $Motivation]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +54,14 @@ class MotivationController extends Controller // Update the controller class nam
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('Motivation.show', $id)->with('success', 'Motivation updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = Motivation::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $Motivation = Motivation::find($id); // Use the correct model name 'User'
+        $Motivation->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('Motivation.index')->with('success', 'Motivation deleted successfully'); // Update the route name to 'users.index'
     }
 }

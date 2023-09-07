@@ -9,13 +9,22 @@ class PublisherController extends Controller // Update the controller class name
 {
     public function index()
     {
-        $users = Publisher::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $Publisher = Publisher::all(); // Use the correct model name 'User'
+        return view('Publisher.index', ['Publisher' => $Publisher]); // Update the view name to 'users.index'
+    }
+
+    public function upload(Request $request)
+    {
+        $Publisher = new Publisher([
+            'pub_name' => $request['pub_name'],
+        ]);
+        $Publisher->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('users.create');
+        return view('Publisher.create');
     }
 
     public function store(Request $request)
@@ -24,19 +33,19 @@ class PublisherController extends Controller // Update the controller class name
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('Publisher.index')->with('success', 'Publisher created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = Publisher::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $Publisher = Publisher::find($id); // Use the correct model name 'User'
+        return view('Publisher.show', ['Publisher' => $Publisher]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = Publisher::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $Publisher = Publisher::find($id); // Use the correct model name 'User'
+        return view('Publisher.edit', ['Publisher' => $Publisher]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +54,14 @@ class PublisherController extends Controller // Update the controller class name
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('Publisher.show', $id)->with('success', 'Publisher updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = Publisher::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $Publisher = Publisher::find($id); // Use the correct model name 'User'
+        $Publisher->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('Publisher.index')->with('success', 'Publisher deleted successfully'); // Update the route name to 'users.index'
     }
 }

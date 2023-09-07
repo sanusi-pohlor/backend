@@ -16,7 +16,6 @@ class TypeInformationController extends Controller // Update the controller clas
     public function upload(Request $request)
     {
         $TypeInformation = new TypeInformation([
-            'type_info_id' => $request['type_info_id'],
             'type_info_name' => $request['type_info_name'],
         ]);
         $TypeInformation->save();

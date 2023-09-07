@@ -9,13 +9,23 @@ class CheckingDataController extends Controller // Update the controller class n
 {
     public function index()
     {
-        $users = CheckingData::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $CheckingData = CheckingData::all(); // Use the correct model name 'User'
+        return view('CheckingData.index', ['CheckingData' => $CheckingData]); // Update the view name to 'users.index'
     }
+
+    public function upload(Request $request)
+    {
+        $CheckingData = new CheckingData([
+            'che_d_format' => $request['che_d_format'],
+        ]);
+        $CheckingData->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
+    }
+
 
     public function create()
     {
-        return view('users.create');
+        return view('CheckingData.create');
     }
 
     public function store(Request $request)
@@ -24,19 +34,19 @@ class CheckingDataController extends Controller // Update the controller class n
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('CheckingData.index')->with('success', 'CheckingData created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = CheckingData::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $CheckingData = CheckingData::find($id); // Use the correct model name 'User'
+        return view('CheckingData.show', ['CheckingData' => $CheckingData]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = CheckingData::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $CheckingData = CheckingData::find($id); // Use the correct model name 'User'
+        return view('CheckingData.edit', ['CheckingData' => $CheckingData]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +55,14 @@ class CheckingDataController extends Controller // Update the controller class n
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('CheckingData.show', $id)->with('success', 'CheckingData updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = CheckingData::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $CheckingData = CheckingData::find($id); // Use the correct model name 'User'
+        $CheckingData->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('CheckingData.index')->with('success', 'CheckingData deleted successfully'); // Update the route name to 'users.index'
     }
 }

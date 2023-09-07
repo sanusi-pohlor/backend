@@ -9,13 +9,23 @@ class SubpointController extends Controller // Update the controller class name 
 {
     public function index()
     {
-        $users = Subpoint::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $Subpoint = Subpoint::all(); // Use the correct model name 'User'
+        return view('Subpoint.index', ['Subpoint' => $Subpoint]); // Update the view name to 'users.index'
+    }
+
+    public function upload(Request $request)
+    {
+        $Subpoint = new Subpoint([
+            'subp_type_id' => $request['subp_type_id'],
+            'subp_name' => $request['subp_name'],
+        ]);
+        $Subpoint->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('users.create');
+        return view('Subpoint.create');
     }
 
     public function store(Request $request)
@@ -24,19 +34,19 @@ class SubpointController extends Controller // Update the controller class name 
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('Subpoint.index')->with('success', 'Subpoint created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = Subpoint::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $Subpoint = Subpoint::find($id); // Use the correct model name 'User'
+        return view('Subpoint.show', ['Subpoint' => $Subpoint]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = Subpoint::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $Subpoint = Subpoint::find($id); // Use the correct model name 'User'
+        return view('Subpoint.edit', ['Subpoint' => $Subpoint]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +55,14 @@ class SubpointController extends Controller // Update the controller class name 
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('Subpoint.show', $id)->with('success', 'Subpoint updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = Subpoint::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $Subpoint = Subpoint::find($id); // Use the correct model name 'User'
+        $Subpoint->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('Subpoint.index')->with('success', 'Subpoint deleted successfully'); // Update the route name to 'users.index'
     }
 }

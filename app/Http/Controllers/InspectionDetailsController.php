@@ -9,13 +9,25 @@ class InspectionDetailsController extends Controller // Update the controller cl
 {
     public function index()
     {
-        $users = InspectionDetails::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $InspectionDetails = InspectionDetails::all(); // Use the correct model name 'User'
+        return view('InspectionDetails.index', ['InspectionDetails' => $InspectionDetails]); // Update the view name to 'users.index'
+    }
+
+    public function upload(Request $request)
+    {
+        $InspectionDetails = new InspectionDetails([
+            'ins_dt_che_id' => $request['ins_dt_che_id'],
+            'ins_dt_info_id' => $request['ins_dt_info_id'],
+            'ins_dt_date' => $request['ins_dt_date'],
+            'ins_dt_more' => $request['ins_dt_more'],
+        ]);
+        $InspectionDetails->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('users.create');
+        return view('InspectionDetails.create');
     }
 
     public function store(Request $request)
@@ -24,19 +36,19 @@ class InspectionDetailsController extends Controller // Update the controller cl
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('InspectionDetails.index')->with('success', 'InspectionDetails created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = InspectionDetails::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $InspectionDetails = InspectionDetails::find($id); // Use the correct model name 'User'
+        return view('InspectionDetails.show', ['InspectionDetails' => $InspectionDetails]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = InspectionDetails::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $InspectionDetails = InspectionDetails::find($id); // Use the correct model name 'User'
+        return view('InspectionDetails.edit', ['InspectionDetails' => $InspectionDetails]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +57,14 @@ class InspectionDetailsController extends Controller // Update the controller cl
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('InspectionDetails.show', $id)->with('success', 'InspectionDetails updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = InspectionDetails::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $InspectionDetails = InspectionDetails::find($id); // Use the correct model name 'User'
+        $InspectionDetails->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('InspectionDetails.index')->with('success', 'InspectionDetails deleted successfully'); // Update the route name to 'users.index'
     }
 }

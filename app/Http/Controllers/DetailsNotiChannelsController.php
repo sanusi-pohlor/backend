@@ -9,13 +9,31 @@ class DetailsNotiChannelsController extends Controller // Update the controller 
 {
     public function index()
     {
-        $users = DetailsNotiChannels::all(); // Use the correct model name 'User'
-        return view('users.index', ['users' => $users]); // Update the view name to 'users.index'
+        $DetailsNotiChannels = DetailsNotiChannels::all(); // Use the correct model name 'User'
+        return view('DetailsNotiChannels.index', ['DetailsNotiChannels' => $DetailsNotiChannels]); // Update the view name to 'users.index'
+    }
+
+    public function upload(Request $request)
+    {
+        $DetailsNotiChannels = new DetailsNotiChannels([
+            'dnc_med_id' => $request['dnc_med_id'],
+            'dnc_info_id' => $request['dnc_info_id'],
+            'dnc_pub_id' => $request['dnc_pub_id'],
+            'dnc_fm_d_id' => $request['dnc_fm_d_id'],
+            'dnc_prob_id' => $request['dnc_prob_id'],
+            'dnc_scop_pub' => $request['dnc_scop_pub'],
+            'dnc_num_mem_med' => $request['dnc_num_mem_med'],
+            'dnc_date_med' => $request['dnc_date_med'],
+            'dnc_capt' => $request['dnc_capt'],
+            'dnc_link' => $request['dnc_link'],
+        ]);
+        $DetailsNotiChannels->save();
+        return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('users.create');
+        return view('DetailsNotiChannels.create');
     }
 
     public function store(Request $request)
@@ -24,19 +42,19 @@ class DetailsNotiChannelsController extends Controller // Update the controller 
         // Use the 'User' model to create a new user
         // ...
 
-        return redirect()->route('users.index')->with('success', 'User created successfully'); // Update the route name to 'users.index'
+        return redirect()->route('DetailsNotiChannels.index')->with('success', 'DetailsNotiChannels created successfully'); // Update the route name to 'users.index'
     }
 
     public function show($id)
     {
-        $user = DetailsNotiChannels::find($id); // Use the correct model name 'User'
-        return view('users.show', ['user' => $user]); // Update the view name to 'users.show'
+        $DetailsNotiChannels = DetailsNotiChannels::find($id); // Use the correct model name 'User'
+        return view('DetailsNotiChannels.show', ['DetailsNotiChannels' => $DetailsNotiChannels]); // Update the view name to 'users.show'
     }
 
     public function edit($id)
     {
-        $user = DetailsNotiChannels::find($id); // Use the correct model name 'User'
-        return view('users.edit', ['user' => $user]); // Update the view name to 'users.edit'
+        $DetailsNotiChannels = DetailsNotiChannels::find($id); // Use the correct model name 'User'
+        return view('DetailsNotiChannels.edit', ['DetailsNotiChannels' => $DetailsNotiChannels]); // Update the view name to 'users.edit'
     }
 
     public function update(Request $request, $id)
@@ -45,14 +63,14 @@ class DetailsNotiChannelsController extends Controller // Update the controller 
         // Use the 'User' model to update the user
         // ...
 
-        return redirect()->route('users.show', $id)->with('success', 'User updated successfully'); // Update the route name to 'users.show'
+        return redirect()->route('DetailsNotiChannels.show', $id)->with('success', 'DetailsNotiChannels updated successfully'); // Update the route name to 'users.show'
     }
 
     public function destroy($id)
     {
-        $user = DetailsNotiChannels::find($id); // Use the correct model name 'User'
-        $user->delete(); // Use the 'delete' method to delete the user
+        $DetailsNotiChannels = DetailsNotiChannels::find($id); // Use the correct model name 'User'
+        $DetailsNotiChannels->delete(); // Use the 'delete' method to delete the user
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('DetailsNotiChannels.index')->with('success', 'DetailsNotiChannels deleted successfully'); // Update the route name to 'users.index'
     }
 }
