@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ActionType; // Update the model class name to singular 'User'
+use App\Models\ActionType; // Updated model class name to singular 'ActionType'
 use Illuminate\Http\Request;
 
-class ActionTypeController extends Controller // Update the controller class name to 'UsersController'
+class ActionTypeController extends Controller
 {
     public function index()
     {
-        $ActionType = ActionType::all(); // Use the correct model name 'User'
-        return view('ActionType.index', ['ActionType' => $ActionType]); // Update the view name to 'users.index'
+        $ActionType = ActionType::all(); // Updated model name to singular 'ActionType'
+        return view('action_type.index', ['actionTypes' => $ActionType]); // Updated view name and variable name
     }
 
     public function upload(Request $request)
@@ -29,40 +29,38 @@ class ActionTypeController extends Controller // Update the controller class nam
     }
 
     public function store(Request $request)
-    {
-        // Validate and store a new user record
-        // Use the 'User' model to create a new user
-        // ...
+{
+    $validatedData = $request->validate([
+        'act_ty_name' => 'required',
+        // Add more validation rules as needed
+    ]);
 
-        return redirect()->route('ActionType.index')->with('success', 'ActionType created successfully'); // Update the route name to 'users.index'
-    }
+    $actionType = new ActionType();
+    $actionType->act_ty_name = $validatedData['act_ty_name'];
+    $actionType->save();
 
-    public function show($id)
-    {
-        $ActionType = ActionType::find($id); // Use the correct model name 'User'
-        return view('ActionType.show', ['ActionType' => $ActionType]); // Update the view name to 'users.show'
-    }
+    return redirect()->route('action_type.index')->with('success', 'ActionType created successfully');
+}
 
-    public function edit($id)
-    {
-        $ActionType = ActionType::find($id); // Use the correct model name 'User'
-        return view('ActionType.edit', ['ActionType' => $ActionType]); // Update the view name to 'users.edit'
-    }
+public function update(Request $request, $id)
+{
+    $validatedData = $request->validate([
+        'act_ty_name' => 'required',
+        // Add more validation rules as needed
+    ]);
 
-    public function update(Request $request, $id)
-    {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
+    $actionType = ActionType::find($id);
+    $actionType->act_ty_name = $validatedData['act_ty_name'];
+    $actionType->save();
 
-        return redirect()->route('ActionType.show', $id)->with('success', 'ActionType updated successfully'); // Update the route name to 'users.show'
-    }
+    return redirect()->route('action_type.show', $id)->with('success', 'ActionType updated successfully');
+}
 
-    public function destroy($id)
-    {
-        $ActionType = ActionType::find($id); // Use the correct model name 'User'
-        $ActionType->delete(); // Use the 'delete' method to delete the user
+public function destroy($id)
+{
+    $actionType = ActionType::find($id);
+    $actionType->delete();
 
-        return redirect()->route('ActionType.index')->with('success', 'ActionType deleted successfully'); // Update the route name to 'users.index'
-    }
+    return redirect()->route('action_type.index')->with('success', 'ActionType deleted successfully');
+}
 }
