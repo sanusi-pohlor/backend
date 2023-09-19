@@ -10,8 +10,8 @@ class PublisherController extends Controller // Update the controller class name
     public function index()
     {
         $Publisher = Publisher::all(); // Use the correct model name 'User'
-        return view('Publisher.index', ['Publisher' => $Publisher]); // Update the view name to 'users.index'
-    }
+        return response()->json($Publisher);    
+        }
 
     public function upload(Request $request)
     {

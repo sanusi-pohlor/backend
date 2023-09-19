@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ActionType extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'act_ty_id','act_ty_name',
+        'act_ty_id', 'act_ty_name',
     ];
 }

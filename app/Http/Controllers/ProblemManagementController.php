@@ -10,8 +10,8 @@ class ProblemManagementController extends Controller // Update the controller cl
     public function index()
     {
         $ProblemManagement = ProblemManagement::all(); // Use the correct model name 'User'
-        return view('ProblemManagement.index', ['ProblemManagement' => $ProblemManagement]); // Update the view name to 'users.index'
-    }
+        return response()->json($ProblemManagement);    
+        }
 
     public function upload(Request $request)
     {

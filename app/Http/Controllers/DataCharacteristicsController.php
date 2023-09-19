@@ -10,7 +10,7 @@ class DataCharacteristicsController extends Controller // Update the controller 
     public function index()
     {
         $DataCharacteristics = DataCharacteristics::all(); // Use the correct model name 'User'
-        return view('DataCharacteristics.index', ['DataCharacteristics' => $DataCharacteristics]); // Update the view name to 'users.index'
+        return response()->json($DataCharacteristics);    
     }
 
     public function upload(Request $request)

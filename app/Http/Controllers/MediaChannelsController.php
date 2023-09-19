@@ -10,7 +10,7 @@ class MediaChannelsController extends Controller // Update the controller class 
     public function index()
     {
         $MediaChannels = MediaChannels::all(); // Use the correct model name 'User'
-        return view('MediaChannels.index', ['MediaChannels' => $MediaChannels]); // Update the view name to 'users.index'
+        return response()->json($MediaChannels);
     }
 
     public function upload(Request $request)

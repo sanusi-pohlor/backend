@@ -10,8 +10,8 @@ class MotivationController extends Controller // Update the controller class nam
     public function index()
     {
         $Motivation = Motivation::all(); // Use the correct model name 'User'
-        return view('Motivation.index', ['Motivation' => $Motivation]); // Update the view name to 'users.index'
-    }
+        return response()->json($Motivation);    
+        }
 
     public function upload(Request $request)
     {

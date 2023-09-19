@@ -12,7 +12,7 @@ class NewsController extends Controller
     public function index()
     {
         $News = News::all();
-        return view('News.index', ['News' => $News]);
+        return response()->json($News);
     }
 
     public function upload(Request $request)

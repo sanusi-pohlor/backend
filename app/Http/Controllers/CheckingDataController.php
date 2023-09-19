@@ -10,8 +10,8 @@ class CheckingDataController extends Controller // Update the controller class n
     public function index()
     {
         $CheckingData = CheckingData::all(); // Use the correct model name 'User'
-        return view('CheckingData.index', ['CheckingData' => $CheckingData]); // Update the view name to 'users.index'
-    }
+        return response()->json($CheckingData);   
+        }
 
     public function upload(Request $request)
     {

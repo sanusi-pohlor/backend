@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\FormatData; // Update the model class name to singular 'User'
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FormatDataController extends Controller // Update the controller class name to 'UsersController'
 {
     public function index()
     {
         $FormatData = FormatData::all(); // Use the correct model name 'User'
-        return view('FormatData.index', ['FormatData' => $FormatData]); // Update the view name to 'users.index'
+        return response()->json($FormatData);    
     }
 
     public function upload(Request $request)

@@ -10,8 +10,8 @@ class SubpointController extends Controller // Update the controller class name 
     public function index()
     {
         $Subpoint = Subpoint::all(); // Use the correct model name 'User'
-        return view('Subpoint.index', ['Subpoint' => $Subpoint]); // Update the view name to 'users.index'
-    }
+        return response()->json($Subpoint);    
+        }
 
     public function upload(Request $request)
     {
