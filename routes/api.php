@@ -30,6 +30,18 @@ use App\Http\Controllers\SubpointController;
 use App\Http\Controllers\TypeInformationController;
 use App\Http\Controllers\VolunteeMembersController;
 
+use App\Http\Controllers\ActionTypeControllerr;
+
+// Display data
+Route::get('/action-types', [ActionTypeControllerr::class, 'index']);
+
+// Add data (show a form)
+Route::get('/action-types/create', [ActionTypeController::class, 'create']);
+
+// Store data (handle form submission)
+Route::post('/action-types', [ActionTypeController::class, 'store']);
+
+
 Route::get('/data', [NewsController::class, 'index']);
 Route::post('/upload', [NewsController::class, 'upload']);
 Route::post('/register', [RegisterController::class, 'Register']);
