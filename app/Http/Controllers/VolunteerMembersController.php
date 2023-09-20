@@ -10,8 +10,7 @@ class VolunteeMembersController extends Controller // Update the controller clas
     public function index()
     {
         $VolunteeMembers = VolunteeMembers::all(); // Use the correct model name 'User'
-        return view('VolunteeMembers.index', ['VolunteeMembers' => $VolunteeMembers]); // Update the view name to 'users.index'
-    }
+        return response()->json($VolunteeMembers);     }
 
     public function upload(Request $request)
     {

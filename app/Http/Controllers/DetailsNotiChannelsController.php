@@ -10,8 +10,8 @@ class DetailsNotiChannelsController extends Controller // Update the controller 
     public function index()
     {
         $DetailsNotiChannels = DetailsNotiChannels::all(); // Use the correct model name 'User'
-        return view('DetailsNotiChannels.index', ['DetailsNotiChannels' => $DetailsNotiChannels]); // Update the view name to 'users.index'
-    }
+        return response()->json($DetailsNotiChannels);    
+        }
 
     public function upload(Request $request)
     {

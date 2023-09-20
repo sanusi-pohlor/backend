@@ -10,8 +10,7 @@ class TypeInformationController extends Controller // Update the controller clas
     public function index()
     {
         $TypeInformation = TypeInformation::all(); // Use the correct model name 'User'
-        return response()->json($TypeInformation);    
-    }
+        return response()->json($TypeInformation);        }
 
     public function upload(Request $request)
     {

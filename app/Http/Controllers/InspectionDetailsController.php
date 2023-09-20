@@ -10,8 +10,8 @@ class InspectionDetailsController extends Controller // Update the controller cl
     public function index()
     {
         $InspectionDetails = InspectionDetails::all(); // Use the correct model name 'User'
-        return view('InspectionDetails.index', ['InspectionDetails' => $InspectionDetails]); // Update the view name to 'users.index'
-    }
+        return response()->json($InspectionDetails);       
+     }
 
     public function upload(Request $request)
     {

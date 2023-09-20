@@ -11,7 +11,7 @@ class ActionTypeControllerr extends Controller
     public function index()
 {
     $actionTypes = ActionType::all();
-    return view('action_types.index', ['actionTypes' => $actionTypes]);
+    return response()->json($actionTypes);    
 }
 
 // Show the form for adding data

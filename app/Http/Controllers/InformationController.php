@@ -10,8 +10,8 @@ class InformationController extends Controller // Update the controller class na
     public function index()
     {
         $Information = Information::all(); // Use the correct model name 'User'
-        return view('Information.index', ['Information' => $Information]); // Update the view name to 'users.index'
-    }
+        return response()->json($Information);    
+        }
 
     public function upload(Request $request)
     {
