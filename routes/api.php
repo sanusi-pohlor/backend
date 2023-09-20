@@ -28,19 +28,7 @@ use App\Http\Controllers\ProblemManagementController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\SubpointController;
 use App\Http\Controllers\TypeInformationController;
-use App\Http\Controllers\VolunteeMembersController;
-
-use App\Http\Controllers\ActionTypeControllerr;
-
-// Display data
-Route::get('/action-types', [ActionTypeControllerr::class, 'index']);
-
-// Add data (show a form)
-Route::get('/action-types/create', [ActionTypeController::class, 'create']);
-
-// Store data (handle form submission)
-Route::post('/action-types', [ActionTypeController::class, 'store']);
-
+use App\Http\Controllers\VolunteerMembersController;
 
 Route::get('/data', [NewsController::class, 'index']);
 Route::post('/upload', [NewsController::class, 'upload']);
@@ -60,7 +48,7 @@ Route::get('/ProblemManagement_request', [ProblemManagementController::class, 'i
 Route::get('/Publisher_request', [PublisherController::class, 'index']);
 Route::get('/Subpoint_request', [SubpointController::class, 'index']);
 Route::get('/TypeInformation_request', [TypeInformationController::class, 'index']);
-Route::get('/VolunteeMembers_request', [VolunteeMembersController::class, 'index']);
+Route::get('/VolunteerMembers_request', [VolunteerMembersController::class, 'index']);
 
 //upload_manage_content
 Route::post('/ActionType_upload', [ActionTypeController::class, 'upload']);
@@ -76,7 +64,7 @@ Route::post('/ProblemManagement_upload', [ProblemManagementController::class, 'u
 Route::post('/Publisher_upload', [PublisherController::class, 'upload']);
 Route::post('/Subpoint_upload', [SubpointController::class, 'upload']);
 Route::post('/TypeInformation_upload', [TypeInformationController::class, 'upload']);
-Route::post('/VolunteeMembers_upload', [VolunteeMembersController::class, 'upload']);
+Route::post('/VolunteerMembers_upload', [VolunteerMembersController::class, 'upload']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
