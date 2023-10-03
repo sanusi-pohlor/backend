@@ -23,6 +23,7 @@ class UsersController extends Controller // Update the controller class name to 
             'phone_number' => $request['phone_number'],
             'Id_line' => $request['Id_line'],
             'province' => $request['province'],
+            'receive_ct_email' => $request['receive_ct_email'],
         ]);
         $users->save();
         return response()->json(['message' => 'Data received and processed'], 200);

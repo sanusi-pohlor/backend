@@ -9,6 +9,6 @@ class Users extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id','username', 'lastName', 'email', 'password', 'phone_number', 'Id_line', 'province',
+        'id','username', 'lastName', 'email', 'password', 'phone_number', 'Id_line', 'province','receive_ct_email'
     ];
 }
