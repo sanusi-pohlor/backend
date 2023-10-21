@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('phone_number');
             $table->string('Id_line');
             $table->string('province');
-            $table->rememberToken();
+            $table->string('receive_ct_email');
             $table->timestamps();
         });
     }
