@@ -60,6 +60,7 @@ Route::get('/Publisher_request', [PublisherController::class, 'index']);
 Route::get('/Subpoint_request', [SubpointController::class, 'index']);
 Route::get('/TypeInformation_request', [TypeInformationController::class, 'index']);
 Route::get('/VolunteerMembers_request', [VolunteerMembersController::class, 'index']);
+Route::get('/FakeNewsInfo_request', [FakeNewsInfoController::class, 'index']);
 
 //upload_manage_content
 Route::post('/ActionType_upload', [ActionTypeController::class, 'upload']);

@@ -25,16 +25,18 @@ class FakeNewsInfoController extends Controller
             $uploadedImage ->move('fn_info_image/', $imageName);
 
             $FakeNewsInfo = new FakeNewsInfo([
-                'fn_info_name' => $request['fn_info_name'],
+                'fn_info_nameid' => $request['fn_info_nameid'],
                 'fn_info_province' => $request['fn_info_province'],
+                'fn_info_head' => $request['fn_info_head'],
                 'fn_info_content' => $request['fn_info_content'],
                 'fn_info_source' => $request['fn_info_source'],
                 'fn_info_num_mem' => $request['fn_info_num_mem'],
                 'fn_info_more' => $request['fn_info_more'],
                 'fn_info_link' => $request['fn_info_link'],
-                //'fn_info_dmy' => $request['fn_info_dmy'],
+                'fn_info_dmy' => $request['fn_info_dmy'],
                 'fn_info_image' => $imageName,
                 // 'fn_info_vdo' => $vdoName,
+                'fn_info_status' => 1,
             ]);
             $FakeNewsInfo->save();
             return response()->json(['message' => 'Data received and processed'], 200);
