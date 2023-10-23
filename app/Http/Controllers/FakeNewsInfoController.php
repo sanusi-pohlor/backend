@@ -21,8 +21,8 @@ class FakeNewsInfoController extends Controller
 
         if ($request->file('fn_info_image')) {
             $uploadedImage  = $request->file('fn_info_image');
-            $imageName = time() . '.' . $uploadedImage ->getClientOriginalExtension();
-            $uploadedImage ->move('fn_info_image/', $imageName);
+            $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+            $uploadedImage->move('fn_info_image/', $imageName);
 
             $FakeNewsInfo = new FakeNewsInfo([
                 'fn_info_nameid' => $request['fn_info_nameid'],
@@ -61,23 +61,69 @@ class FakeNewsInfoController extends Controller
 
     public function show($id)
     {
-        $FakeNewsInfo = FakeNewsInfo::find($id); // Use the correct model name 'User'
-        return view('FakeNewsInfo.show', ['FakeNewsInfo' => $FakeNewsInfo]); // Update the view name to 'users.show'
+        $FakeNewsInfo = FakeNewsInfo::find($id);
+
+        if (!$FakeNewsInfo) {
+            return response()->json(['error' => 'Fake News not found'], 404);
+        }
+        $FakeNewsInfo->fn_info_image = asset('fn_info_image/' . $FakeNewsInfo->fn_info_image);
+        return response()->json($FakeNewsInfo);
     }
 
     public function edit($id)
     {
-        $FakeNewsInfo = FakeNewsInfo::find($id); // Use the correct model name 'User'
-        return view('FakeNewsInfo.edit', ['FakeNewsInfo' => $FakeNewsInfo]); // Update the view name to 'users.edit'
+        $FakeNewsInfo = FakeNewsInfo::find($id);
+
+        if (!$FakeNewsInfo) {
+            return response()->json(['error' => 'Fake News not found'], 404);
+        }
+        $FakeNewsInfo->fn_info_image = asset('fn_info_image/' . $FakeNewsInfo->fn_info_image);
+        return response()->json($FakeNewsInfo);
     }
 
     public function update(Request $request, $id)
     {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
+        // First, validate the request data
+        $request->validate([
+            'fn_info_head' => 'required|string',
+            'fn_info_content' => 'required|string',
+            'fn_info_source' => 'required|string',
+            'fn_info_num_mem' => 'required|string',
+            'fn_info_more' => 'required|string',
+            'fn_info_link' => 'nullable|url',
+            'fn_info_dmy' => 'required|date_format:Y-m-d',
+            'fn_info_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-        return redirect()->route('FakeNewsInfo.show', $id)->with('success', 'FakeNewsInfo updated successfully'); // Update the route name to 'users.show'
+        // Find the FakeNewsInfo record by ID
+        $fakeNewsInfo = FakeNewsInfo::find($id);
+
+        if (!$fakeNewsInfo) {
+            return response()->json(['error' => 'Fake News not found'], 404);
+        }
+
+        // Update the fields based on the validated data
+        $fakeNewsInfo->fn_info_head = $request->input('fn_info_head');
+        $fakeNewsInfo->fn_info_content = $request->input('fn_info_content');
+        $fakeNewsInfo->fn_info_source = $request->input('fn_info_source');
+        $fakeNewsInfo->fn_info_num_mem = $request->input('fn_info_num_mem');
+        $fakeNewsInfo->fn_info_more = $request->input('fn_info_more');
+        $fakeNewsInfo->fn_info_link = $request->input('fn_info_link');
+        $fakeNewsInfo->fn_info_dmy = $request->input('fn_info_dmy');
+
+        // Handle the image upload if a new image is provided
+        if ($request->hasFile('fn_info_image')) {
+            $uploadedImage = $request->file('fn_info_image');
+            $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+            $uploadedImage->move('fn_info_image/', $imageName);
+            $fakeNewsInfo->fn_info_image = $imageName;
+        }
+
+        // Save the changes to the database
+        $fakeNewsInfo->save();
+
+        // Return a success response or other necessary actions
+        return response()->json(['message' => 'Fake News updated successfully'], 200);
     }
 
     public function destroy($id)
