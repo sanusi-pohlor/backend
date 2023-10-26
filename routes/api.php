@@ -66,10 +66,13 @@ Route::get('/FakeNewsInfo_request', [FakeNewsInfoController::class, 'index']);
 Route::get('/FakeNewsInfo_show/{id}', [FakeNewsInfoController::class, 'show']);
 
 //update_manage_content
-Route::put('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update']);
+Route::post('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update']);
 
 //edit_manage_content
 Route::get('/FakeNewsInfo_edit/{id}', [FakeNewsInfoController::class, 'edit']);
+
+//delete_manage_content
+Route::delete('FakeNewsInfo_delete/{id}', [FakeNewsInfoController::class, 'destroy']);
 
 //upload_manage_content
 Route::post('/ActionType_upload', [ActionTypeController::class, 'upload']);
