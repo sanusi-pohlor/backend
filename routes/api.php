@@ -95,8 +95,8 @@ Route::post('/FakeNewsInfo_upload', [FakeNewsInfoController::class, 'upload']);
 //     return $request->user();
 // });
 
-Route::post('register', [\App\Http\Controllers\AuthController::class, 'register']);
-Route::post('login', [\App\Http\Controllers\AuthController::class, 'login']);
+Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register']);
+Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [\App\Http\Controllers\AuthController::class, 'user']);
