@@ -95,13 +95,11 @@ Route::post('/FakeNewsInfo_upload', [FakeNewsInfoController::class, 'upload']);
 //     return $request->user();
 // });
 
-Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register']);
-Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('user', [\App\Http\Controllers\AuthController::class, 'user']);
-    Route::post('logout', [\App\Http\Controllers\AuthController::class, 'logout']);
+    Route::get('user', [AuthController::class, 'user']);
+    Route::post('logout', [AuthController::class, 'logout']);
 
 });
-Route::get('image-upload', [ImageController::class, 'index'])->name('image.upload');
-Route::post('image-upload', [ImageController::class, 'store'])->name('image.upload.store');

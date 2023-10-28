@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
@@ -12,7 +12,7 @@ class RegisterController extends Controller
 {
     public function Register(Request $request)
     {
-        $user = new Users([
+        $user = new User([
             'username' => $request['username'],
             'lastName' => $request['lastName'],
             'email' => $request['email'],
@@ -26,7 +26,6 @@ class RegisterController extends Controller
 
         return response()->json([
             'message' => 'User registered successfully',
-            // 'user' => $user
         ], 200);
     }
 }

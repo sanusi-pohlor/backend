@@ -14,18 +14,22 @@ class AuthController extends Controller
     // User registration
     public function register(Request $request)
     {
-        // Create a new user record in the database with the provided data
-        return User::create([
+        $user = User::create([
             'username' => $request->input('username'),
             'lastName' => $request->input('lastName'),
             'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')), // Hash the password
+            'password' => Hash::make($request->input('password')),
             'phone_number' => $request->input('phone_number'),
             'Id_line' => $request->input('Id_line'),
             'province' => $request->input('province'),
             'receive_ct_email' => $request->input('receive_ct_email'),
         ]);
+
+        $token = $user->createToken('Token')->plainTextToken;
+
+        return response()->json(['token' => $token], 200);
     }
+
 
     // User login
     public function login(Request $request)
