@@ -32,6 +32,7 @@ use App\Http\Controllers\TypeInformationController;
 use App\Http\Controllers\VolunteerMembersController;
 use App\Http\Controllers\FakeNewsInfoController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\UsersController;
 
 Route::get('/data', [NewsController::class, 'index']);
 Route::post('/upload', [NewsController::class, 'upload']);
@@ -64,12 +65,16 @@ Route::get('/FakeNewsInfo_request', [FakeNewsInfoController::class, 'index']);
 
 //show_manage_content
 Route::get('/FakeNewsInfo_show/{id}', [FakeNewsInfoController::class, 'show']);
+Route::get('/AmUser', [UsersController::class, 'index']);
+Route::get('/ManageInfo_request', [FakeNewsInfoController::class, 'index']);
 
 //update_manage_content
 Route::post('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update']);
+Route::post('/User_update/{id}', [AuthController::class, 'update']);
 
 //edit_manage_content
 Route::get('/FakeNewsInfo_edit/{id}', [FakeNewsInfoController::class, 'edit']);
+Route::get('/User_edit/{id}', [AuthController::class, 'edit']);
 
 //delete_manage_content
 Route::delete('FakeNewsInfo_delete/{id}', [FakeNewsInfoController::class, 'destroy']);
