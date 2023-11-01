@@ -95,6 +95,7 @@ Route::post('/Subpoint_upload', [SubpointController::class, 'upload']);
 Route::post('/TypeInformation_upload', [TypeInformationController::class, 'upload']);
 Route::post('/VolunteerMembers_upload', [VolunteerMembersController::class, 'upload']);
 Route::post('/FakeNewsInfo_upload', [FakeNewsInfoController::class, 'upload']);
+Route::post('/updateFakeNewsStatus/{id}', [FakeNewsInfoController::class, 'UpStatus']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
