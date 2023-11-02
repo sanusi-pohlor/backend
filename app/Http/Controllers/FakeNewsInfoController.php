@@ -37,7 +37,7 @@ class FakeNewsInfoController extends Controller
                 'fn_info_dmy' => $request['fn_info_dmy'],
                 'fn_info_image' => $imageName,
                 // 'fn_info_vdo' => $vdoName,
-                'fn_info_status' => 1,
+                'fn_info_status' => 0,
             ]);
             $FakeNewsInfo->save();
             return response()->json(['message' => 'Data received and processed'], 200);
