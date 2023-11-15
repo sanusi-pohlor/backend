@@ -17,13 +17,15 @@ class NewsController extends Controller
 
     public function upload(Request $request)
     {
+        $items = $request['items'];
+        $dataArray = json_decode($items, true);
         $News = new News([
-            'title' => $request['title'],
-            'description' => $request['description'],
-            'image' => $request['image'],
+            "title"=> $request['title'],
+            "items"=> $dataArray,
         ]);
         $News->save();
-        return response()->json(['message' => 'Data received and processed'], 200);
+        // ส่งกลับข้อมูลไปยัง React
+        return response()->json(['message' => 'สำเร็จ']);
     }
 
     public function create()
