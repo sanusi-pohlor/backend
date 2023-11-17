@@ -17,16 +17,33 @@ class NewsController extends Controller
 
     public function upload(Request $request)
     {
-        $items = $request['items'];
-        $dataArray = json_decode($items, true);
-        $News = new News([
-            "title"=> $request['title'],
-            "items"=> $dataArray,
+        // Validate incoming data
+        $validatedData = $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'details' => 'required|string',
+            'tag' => 'required|string',
+            // Add validation rules for other fields if needed
         ]);
-        $News->save();
-        // ส่งกลับข้อมูลไปยัง React
-        return response()->json(['message' => 'สำเร็จ']);
+
+        try {
+            // Create a new News model instance
+            $news = new News();
+            $news->title = $validatedData['title'];
+            $news->description = $validatedData['description'];
+            $news->details = $validatedData['details'];
+            $news->tag = $validatedData['tag'];
+            // Assign other fields from the form
+
+            // Save the news data to the database
+            $news->save();
+
+            return response()->json(['message' => 'Data saved successfully'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Failed to save data', 'error' => $e->getMessage()], 500);
+        }
     }
+
 
     public function create()
     {
