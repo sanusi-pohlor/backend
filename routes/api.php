@@ -36,6 +36,7 @@ use App\Http\Controllers\UsersController;
 
 Route::get('/data', [NewsController::class, 'index']);
 Route::post('/Adm_News_upload', [NewsController::class, 'upload']);
+Route::post('/Adm_News_uploadimage', [NewsController::class, 'uploadimage']);
 // Route::post('/register', [RegisterController::class, 'Register']);
 // Route::post('/login', [AuthController::class, 'login']);
 

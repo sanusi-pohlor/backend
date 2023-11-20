@@ -25,7 +25,6 @@ class NewsController extends Controller
             'tag' => 'required|string',
             // Add validation rules for other fields if needed
         ]);
-
         try {
             // Create a new News model instance
             $news = new News();
@@ -42,6 +41,17 @@ class NewsController extends Controller
         } catch (\Exception $e) {
             return response()->json(['message' => 'Failed to save data', 'error' => $e->getMessage()], 500);
         }
+    }
+
+    public function uploadimage(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move('NewUploads/', $fileName); // Move file to desired directory
+            return response()->json(['imageUrl' => '/NewUploads/' . $fileName]);
+        }
+        return response()->json(['error' => 'No image uploaded'], 400);
     }
 
 
