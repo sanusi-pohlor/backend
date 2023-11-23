@@ -31,7 +31,7 @@ use App\Http\Controllers\SubpointController;
 use App\Http\Controllers\TypeInformationController;
 use App\Http\Controllers\VolunteerMembersController;
 use App\Http\Controllers\FakeNewsInfoController;
-use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ManageFakeNewInfoController;
 use App\Http\Controllers\UsersController;
 
 Route::get('/data', [NewsController::class, 'index']);
@@ -63,6 +63,7 @@ Route::get('/Subpoint_request', [SubpointController::class, 'index']);
 Route::get('/TypeInformation_request', [TypeInformationController::class, 'index']);
 Route::get('/VolunteerMembers_request', [VolunteerMembersController::class, 'index']);
 Route::get('/FakeNewsInfo_request', [FakeNewsInfoController::class, 'index']);
+Route::get('/Manage_Fake_Info_request', [ManageFakeNewInfoController::class, 'index']);
 
 //show_manage_content
 Route::get('/FakeNewsInfo_show/{id}', [FakeNewsInfoController::class, 'show']);
@@ -98,7 +99,7 @@ Route::post('/VolunteerMembers_upload', [VolunteerMembersController::class, 'upl
 Route::post('/FakeNewsInfo_upload', [FakeNewsInfoController::class, 'upload']);
 Route::post('/updateFakeNewsStatus/{id}', [FakeNewsInfoController::class, 'UpStatus']);
 Route::post('/updateFakeNewsStatus/{id}', [FakeNewsInfoController::class, 'UpStatus']);
-
+Route::post('/Manage_Fake_Info_upload', [ManageFakeNewInfoController::class, 'upload']);
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
