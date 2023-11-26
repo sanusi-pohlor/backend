@@ -33,6 +33,7 @@ use App\Http\Controllers\VolunteerMembersController;
 use App\Http\Controllers\FakeNewsInfoController;
 use App\Http\Controllers\ManageFakeNewInfoController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProvinceController;
 
 Route::get('/data', [NewsController::class, 'index']);
 Route::post('/Adm_News_upload', [NewsController::class, 'upload']);
@@ -64,6 +65,7 @@ Route::get('/TypeInformation_request', [TypeInformationController::class, 'index
 Route::get('/VolunteerMembers_request', [VolunteerMembersController::class, 'index']);
 Route::get('/FakeNewsInfo_request', [FakeNewsInfoController::class, 'index']);
 Route::get('/Manage_Fake_Info_request', [ManageFakeNewInfoController::class, 'index']);
+Route::get('/Province_request', [ProvinceController::class, 'index']);
 
 //show_manage_content
 Route::get('/FakeNewsInfo_show/{id}', [FakeNewsInfoController::class, 'show']);
