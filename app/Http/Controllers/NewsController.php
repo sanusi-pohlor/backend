@@ -70,8 +70,13 @@ class NewsController extends Controller
 
     public function show($id)
     {
-        $News = News::find($id);
-        return view('News.show', ['News' => $News]);
+        $news = News::find($id);
+
+        if (!$news) {
+            return response()->json(['message' => 'ฟNews not found'], 404);
+        }
+
+        return response()->json($news);
     }
 
     public function edit($id)
