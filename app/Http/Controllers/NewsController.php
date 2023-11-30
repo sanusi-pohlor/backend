@@ -20,7 +20,6 @@ class NewsController extends Controller
         // Validate incoming data
         $validatedData = $request->validate([
             'title' => 'required|string',
-            'description' => 'required|string',
             'details' => 'required|string',
             'tag' => 'required|string',
             // Add validation rules for other fields if needed
@@ -29,7 +28,6 @@ class NewsController extends Controller
             // Create a new News model instance
             $news = new News();
             $news->title = $validatedData['title'];
-            $news->description = $validatedData['description'];
             $news->details = $validatedData['details'];
             $news->tag = $validatedData['tag'];
             // Assign other fields from the form
