@@ -19,7 +19,9 @@ class User extends Authenticatable
         'phone_number',
         'Id_line',
         'province',
-        'receive_ct_email'
+        'receive_ct_email',
+        'about',
+        'level',
     ];
 
     protected $hidden = [
