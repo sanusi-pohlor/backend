@@ -17,28 +17,18 @@ class NewsController extends Controller
 
     public function upload(Request $request)
     {
-        // Validate incoming data
-        $validatedData = $request->validate([
-            'title' => 'required|string',
-            'details' => 'required|string',
-            'tag' => 'required|string',
-            // Add validation rules for other fields if needed
-        ]);
-        try {
-            // Create a new News model instance
-            $news = new News();
-            $news->title = $validatedData['title'];
-            $news->details = $validatedData['details'];
-            $news->tag = $validatedData['tag'];
-            // Assign other fields from the form
-
-            // Save the news data to the database
+            $news = new News([
+                'Author' => $request['Author'],
+                'title' => $request['title'],
+                'details' => $request['details'],
+                'video' => $request['video'],
+                'tag' => $request['tag'],
+                'link' => $request['link'],
+                'star' => 0,
+                'status' => 1,
+            ]);
             $news->save();
-
             return response()->json(['message' => 'Data saved successfully'], 200);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'Failed to save data', 'error' => $e->getMessage()], 500);
-        }
     }
 
     public function uploadimage(Request $request)
