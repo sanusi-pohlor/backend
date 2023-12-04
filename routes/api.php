@@ -36,6 +36,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProvinceController;
 
 Route::get('/data', [NewsController::class, 'index']);
+Route::get('/Adm_News_request', [NewsController::class, 'index']);
 Route::post('/Adm_News_upload', [NewsController::class, 'upload']);
 Route::post('/Adm_News_uploadimage', [NewsController::class, 'uploadimage']);
 // Route::post('/register', [RegisterController::class, 'Register']);
