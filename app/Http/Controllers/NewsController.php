@@ -17,18 +17,23 @@ class NewsController extends Controller
 
     public function upload(Request $request)
     {
-            $news = new News([
-                'Author' => $request['Author'],
-                'title' => $request['title'],
-                'details' => $request['details'],
-                'video' => $request['video'],
-                'tag' => $request['tag'],
-                'link' => $request['link'],
-                'star' => 0,
-                'status' => 1,
-            ]);
-            $news->save();
-            return response()->json(['message' => 'Data saved successfully'], 200);
+        $uploadedImage  = $request->file('cover_image');
+        $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+        $uploadedImage->move('cover_image/', $imageName);
+
+        $news = new News([
+            'Author' => $request['Author'],
+            'title' => $request['title'],
+            'details' => $request['details'],
+            'cover_image' => $imageName,
+            'video' => $request['video'],
+            'tag' => $request['tag'],
+            'link' => $request['link'],
+            'star' => 0,
+            'status' => 1,
+        ]);
+        $news->save();
+        return response()->json(['message' => 'Data saved successfully'], 200);
     }
 
     public function uploadimage(Request $request)
