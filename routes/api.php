@@ -74,6 +74,7 @@ Route::get('/AmUser', [UsersController::class, 'index']);
 Route::get('/ManageInfo_request', [FakeNewsInfoController::class, 'index']);
 Route::get('/News_show/{id}', [NewsController::class, 'show']);
 Route::get('/News_request', [NewsController::class, 'index']);
+Route::get('/News_show/{id}', [NewsController::class, 'show']);
 
 //update_manage_content
 Route::post('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update']);

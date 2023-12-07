@@ -10,10 +10,22 @@ use App\Events\NewsCreated;
 class NewsController extends Controller
 {
     public function index()
-    {
-        $News = News::all();
-        return response()->json($News);
+{
+    $news = News::all();
+    $newsWithImages = [];
+
+    foreach ($news as $item) {
+        $newsWithImages[] = [
+            'id' => $item->id,
+            'title' => $item->title,
+            'details' => $item->details,
+            'cover_image' => asset('cover_image/' . $item->cover_image),
+        ];        
     }
+
+    return response()->json($newsWithImages, 200);
+}
+
 
     public function upload(Request $request)
     {
@@ -63,13 +75,13 @@ class NewsController extends Controller
 
     public function show($id)
     {
-        $news = News::find($id);
+        $News = News::find($id);
 
-        if (!$news) {
-            return response()->json(['message' => 'ฟNews not found'], 404);
+        if (!$News) {
+            return response()->json(['error' => 'Fake News not found'], 404);
         }
-
-        return response()->json($news);
+        $News->cover_image = asset('cover_image/' . $News->cover_image);
+        return response()->json($News);
     }
 
     public function edit($id)
