@@ -83,4 +83,19 @@ class AuthController extends Controller
             'message' => 'Success'
         ])->withCookie($cookie);
     }
+
+    public function delete($id)
+    {
+        // Find the article by ID
+        $User = User::find($id);
+
+        if (!$User) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Delete the article
+        $User->delete();
+
+        return response()->json(['message' => 'Article deleted successfully']);
+    }
 }

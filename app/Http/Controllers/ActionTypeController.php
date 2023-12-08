@@ -12,7 +12,7 @@ class ActionTypeController extends Controller
     public function index()
     {
         $ActionType = ActionType::all();
-        return response()->json($ActionType);    
+        return response()->json($ActionType);
     }
 
     public function upload(Request $request)
@@ -31,38 +31,52 @@ class ActionTypeController extends Controller
     }
 
     public function store(Request $request)
-{
-    $validatedData = $request->validate([
-        'act_ty_name' => 'required',
-        // Add more validation rules as needed
-    ]);
+    {
+        $validatedData = $request->validate([
+            'act_ty_name' => 'required',
+            // Add more validation rules as needed
+        ]);
 
-    $actionType = new ActionType();
-    $actionType->act_ty_name = $validatedData['act_ty_name'];
-    $actionType->save();
+        $actionType = new ActionType();
+        $actionType->act_ty_name = $validatedData['act_ty_name'];
+        $actionType->save();
 
-    return redirect()->route('action_type.index')->with('success', 'ActionType created successfully');
-}
+        return redirect()->route('action_type.index')->with('success', 'ActionType created successfully');
+    }
 
-public function update(Request $request, $id)
-{
-    $validatedData = $request->validate([
-        'act_ty_name' => 'required',
-        // Add more validation rules as needed
-    ]);
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'act_ty_name' => 'required',
+            // Add more validation rules as needed
+        ]);
 
-    $actionType = ActionType::find($id);
-    $actionType->act_ty_name = $validatedData['act_ty_name'];
-    $actionType->save();
+        $actionType = ActionType::find($id);
+        $actionType->act_ty_name = $validatedData['act_ty_name'];
+        $actionType->save();
 
-    return redirect()->route('action_type.show', $id)->with('success', 'ActionType updated successfully');
-}
+        return redirect()->route('action_type.show', $id)->with('success', 'ActionType updated successfully');
+    }
 
-public function destroy($id)
-{
-    $actionType = ActionType::find($id);
-    $actionType->delete();
+    public function delete($id)
+    {
+        // Find the article by ID
+        $actionType = actionType::find($id);
 
-    return redirect()->route('action_type.index')->with('success', 'ActionType deleted successfully');
-}
+        if (!$actionType) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Delete the article
+        $actionType->delete();
+
+        return response()->json(['message' => 'Article deleted successfully']);
+    }
+    public function destroy($id)
+    {
+        $actionType = ActionType::find($id);
+        $actionType->delete();
+
+        return redirect()->route('action_type.index')->with('success', 'ActionType deleted successfully');
+    }
 }

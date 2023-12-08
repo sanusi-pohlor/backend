@@ -12,49 +12,77 @@ class MediaShareController extends Controller
     public function index()
     {
         $MediaShare = MediaShare::all();
-        return response()->json($MediaShare);
+        foreach ($MediaShare as $item) {
+            $WithMediaShare[] = [
+                'id' => $item->id,
+                'title' => $item->title,
+                'details' => $item->details,
+                'cover_image' => asset('cover_image/' . $item->cover_image),
+            ];        
+        }
+        return response()->json($WithMediaShare);
     }
 
     public function upload(Request $request)
     {
-        // Validate incoming data
-        $validatedData = $request->validate([
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'details' => 'required|string',
-            'tag' => 'required|string',
-            // Add validation rules for other fields if needed
+        $uploadedImage  = $request->file('cover_image');
+        $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+        $uploadedImage->move('cover_image/', $imageName);
+
+        $MediaShare = new MediaShare([
+            'Author' => $request['Author'],
+            'title' => $request['title'],
+            'details' => $request['details'],
+            'cover_image' => $imageName,
+            'video' => $request['video'],
+            'tag' => $request['tag'],
+            'link' => $request['link'],
+            'star' => 0,
+            'status' => 1,
         ]);
-        try {
-            // Create a MediaShare MediaShare model instance
-            $MediaShare = new MediaShare();
-            $MediaShare->title = $validatedData['title'];
-            $MediaShare->description = $validatedData['description'];
-            $MediaShare->details = $validatedData['details'];
-            $MediaShare->tag = $validatedData['tag'];
-            // Assign other fields from the form
-
-            // Save the MediaShare data to the database
-            $MediaShare->save();
-
-            return response()->json(['message' => 'Data saved successfully'], 200);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'Failed to save data', 'error' => $e->getMessage()], 500);
-        }
+        $MediaShare->save();
+        return response()->json(['message' => 'Data saved successfully'], 200);
     }
 
-    public function uploadimage(Request $request)
+    public function updateStatus(Request $request, $id)
     {
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->move('MediaShareUploads/', $fileName); // Move file to desired directory
-            return response()->json(['imageUrl' => '/MediaShareUploads/' . $fileName]);
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'status' => 'required|in:0,1',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 400);
         }
-        return response()->json(['error' => 'No image uploaded'], 400);
+
+        // Find the article by ID
+        $MediaShare = Article::find($id);
+
+        if (!$MediaShare) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Update the status
+        $MediaShare->status = $request->input('status');
+        $MediaShare->save();
+
+        return response()->json(['message' => 'Article status updated successfully']);
     }
 
+    public function delete($id)
+    {
+        // Find the article by ID
+        $MediaShare = Article::find($id);
 
+        if (!$MediaShare) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Delete the article
+        $MediaShare->delete();
+
+        return response()->json(['message' => 'Article deleted successfully']);
+    }
     public function create()
     {
         return view('MediaShare.create');
@@ -73,9 +101,9 @@ class MediaShareController extends Controller
         $MediaShare = MediaShare::find($id);
 
         if (!$MediaShare) {
-            return response()->json(['message' => 'MediaShare not found'], 404);
+            return response()->json(['error' => 'Fake News not found'], 404);
         }
-
+        $MediaShare->cover_image = asset('cover_image/' . $MediaShare->cover_image);
         return response()->json($MediaShare);
     }
 
@@ -87,10 +115,25 @@ class MediaShareController extends Controller
 
     public function update(Request $request, $id)
     {
-        // Validate and update the MediaShare record
-        // ...
+        $MediaShare = MediaShare::find($id);
 
-        return redirect()->route('MediaShare.show', $id)->with('success', 'MediaShare updated successfully');
+        if ($request->file('cover_image')) {
+            $uploadedImage = $request->file('cover_image');
+            $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+            $uploadedImage->move('cover_image/', $imageName);
+
+            $MediaShare->title = $request->input('title');
+            $MediaShare->details = $request->input('details');
+            $MediaShare->cover_image = $imageName;
+            $MediaShare->video = $request->input('video');
+            $MediaShare->tag = $request->input('tag');
+            $MediaShare->link = $request->input('link');
+            $MediaShare->update();
+
+            return response()->json(['message' => 'Fake News updated successfully'], 200);
+        } else {
+            return response()->json(['message' => 'No images to upload'], 400);
+        }
     }
 
     public function destroy($id)

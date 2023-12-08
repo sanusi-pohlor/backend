@@ -53,11 +53,21 @@ class InspectionDetailsController extends Controller // Update the controller cl
 
     public function update(Request $request, $id)
     {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
+        $validatedData = $request->validate([
+            'ins_dt_che_id' => 'required',
+            'ins_dt_info_id' => 'required',
+            'ins_dt_date' => 'required',
+            'ins_dt_more' => 'required',
+        ]);
 
-        return redirect()->route('InspectionDetails.show', $id)->with('success', 'InspectionDetails updated successfully'); // Update the route name to 'users.show'
+        $InspectionDetails = InspectionDetails::find($id);
+        $InspectionDetails->ins_dt_che_id = $validatedData['ins_dt_che_id'];
+        $InspectionDetails->ins_dt_info_id = $validatedData['ins_dt_info_id'];
+        $InspectionDetails->ins_dt_date = $validatedData['ins_dt_date'];
+        $InspectionDetails->ins_dt_more = $validatedData['ins_dt_more'];
+        $InspectionDetails->save();
+
+        return redirect()->route('InspectionDetails.show', $id)->with('success', 'InspectionDetails updated successfully');
     }
 
     public function destroy($id)

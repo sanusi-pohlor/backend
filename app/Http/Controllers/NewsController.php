@@ -10,26 +10,26 @@ use App\Events\NewsCreated;
 class NewsController extends Controller
 {
     public function index()
-{
-    $news = News::all();
-    $newsWithImages = [];
+    {
+        $news = News::all();
+        $newsWithImages = [];
 
-    foreach ($news as $item) {
-        $newsWithImages[] = [
-            'id' => $item->id,
-            'title' => $item->title,
-            'details' => $item->details,
-            'cover_image' => asset('cover_image/' . $item->cover_image),
-        ];        
+        foreach ($news as $item) {
+            $newsWith[] = [
+                'id' => $item->id,
+                'title' => $item->title,
+                'details' => $item->details,
+                'cover_image' => asset('cover_image/' . $item->cover_image),
+            ];
+        }
+
+        return response()->json($newsWith, 200);
     }
-
-    return response()->json($newsWithImages, 200);
-}
 
 
     public function upload(Request $request)
     {
-        $uploadedImage  = $request->file('cover_image');
+        $uploadedImage = $request->file('cover_image');
         $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
         $uploadedImage->move('cover_image/', $imageName);
 
@@ -48,18 +48,45 @@ class NewsController extends Controller
         return response()->json(['message' => 'Data saved successfully'], 200);
     }
 
-    public function uploadimage(Request $request)
+    public function updateStatus(Request $request, $id)
     {
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->move('NewUploads/', $fileName); // Move file to desired directory
-            return response()->json(['imageUrl' => '/NewUploads/' . $fileName]);
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'status' => 'required|in:0,1',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 400);
         }
-        return response()->json(['error' => 'No image uploaded'], 400);
+
+        // Find the article by ID
+        $news = Article::find($id);
+
+        if (!$news) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Update the status
+        $news->status = $request->input('status');
+        $news->save();
+
+        return response()->json(['message' => 'Article status updated successfully']);
     }
 
+    public function delete($id)
+    {
+        // Find the article by ID
+        $news = Article::find($id);
 
+        if (!$news) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Delete the article
+        $news->delete();
+
+        return response()->json(['message' => 'Article deleted successfully']);
+    }
     public function create()
     {
         return view('News.create');
@@ -92,10 +119,25 @@ class NewsController extends Controller
 
     public function update(Request $request, $id)
     {
-        // Validate and update the news record
-        // ...
+        $News = News::find($id);
 
-        return redirect()->route('News.show', $id)->with('success', 'News updated successfully');
+        if ($request->file('cover_image')) {
+            $uploadedImage = $request->file('cover_image');
+            $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+            $uploadedImage->move('cover_image/', $imageName);
+
+            $News->title = $request->input('title');
+            $News->details = $request->input('details');
+            $News->cover_image = $imageName;
+            $News->video = $request->input('video');
+            $News->tag = $request->input('tag');
+            $News->link = $request->input('link');
+            $News->update();
+
+            return response()->json(['message' => 'Fake News updated successfully'], 200);
+        } else {
+            return response()->json(['message' => 'No images to upload'], 400);
+        }
     }
 
     public function destroy($id)

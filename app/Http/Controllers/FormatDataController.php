@@ -57,7 +57,33 @@ class FormatDataController extends Controller // Update the controller class nam
 
         return redirect()->route('FormatData.show', $id)->with('success', 'FormatData updated successfully'); // Update the route name to 'users.show'
     }
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'fm_d_name' => 'required',
+            // Add more validation rules as needed
+        ]);
 
+        $FormatData = FormatData::find($id);
+        $FormatData->fm_d_name = $validatedData['fm_d_name'];
+        $FormatData->save();
+
+        return redirect()->route('FormatData.show', $id)->with('success', 'FormatData updated successfully');
+    }
+    public function delete($id)
+    {
+        // Find the article by ID
+        $FormatData = FormatData::find($id);
+
+        if (!$FormatData) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Delete the article
+        $FormatData->delete();
+
+        return response()->json(['message' => 'Article deleted successfully']);
+    }
     public function destroy($id)
     {
         $FormatData = FormatData::find($id); // Use the correct model name 'User'

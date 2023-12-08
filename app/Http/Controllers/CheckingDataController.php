@@ -51,13 +51,30 @@ class CheckingDataController extends Controller // Update the controller class n
 
     public function update(Request $request, $id)
     {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
-
-        return redirect()->route('CheckingData.show', $id)->with('success', 'CheckingData updated successfully'); // Update the route name to 'users.show'
+        $validatedData = $request->validate([
+            'che_d_format' => 'required',
+        ]);
+    
+        $CheckingData = CheckingData::find($id);
+        $CheckingData->che_d_format = $validatedData['che_d_format'];
+        $CheckingData->save();
+    
+        return redirect()->route('che_d_format.show', $id)->with('success', 'CheckingData updated successfully');
     }
+    public function delete($id)
+    {
+        // Find the article by ID
+        $CheckingData = CheckingData::find($id);
 
+        if (!$CheckingData) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Delete the article
+        $CheckingData->delete();
+
+        return response()->json(['message' => 'Article deleted successfully']);
+    }
     public function destroy($id)
     {
         $CheckingData = CheckingData::find($id); // Use the correct model name 'User'

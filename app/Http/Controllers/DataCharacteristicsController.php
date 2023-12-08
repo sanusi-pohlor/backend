@@ -50,11 +50,15 @@ class DataCharacteristicsController extends Controller // Update the controller 
 
     public function update(Request $request, $id)
     {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
+        $validatedData = $request->validate([
+            'data_cha_name' => 'required',
+        ]);
 
-        return redirect()->route('DataCharacteristics.show', $id)->with('success', 'DataCharacteristics updated successfully'); // Update the route name to 'users.show'
+        $DataCharacteristics = DataCharacteristics::find($id);
+        $DataCharacteristics->data_cha_name = $validatedData['data_cha_name'];
+        $DataCharacteristics->save();
+
+        return redirect()->route('DataCharacteristics.show', $id)->with('success', 'DataCharacteristics updated successfully');
     }
 
     public function destroy($id)

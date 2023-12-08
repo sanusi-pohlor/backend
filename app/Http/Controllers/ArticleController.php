@@ -12,48 +12,79 @@ class ArticleController extends Controller
     public function index()
     {
         $Article = Article::all();
-        return response()->json($Article);
-    }
+        $ArticleWithImages = [];
 
+        foreach ($Article as $item) {
+            $ArticleWith[] = [
+                'id' => $item->id,
+                'title' => $item->title,
+                'details' => $item->details,
+                'cover_image' => asset('cover_image/' . $item->cover_image),
+            ];
+        }
+
+        return response()->json($ArticleWith, 200);
+    }
     public function upload(Request $request)
     {
-        // Validate incoming data
-        $validatedData = $request->validate([
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'details' => 'required|string',
-            'tag' => 'required|string',
-            // Add validation rules for other fields if needed
+        $uploadedImage = $request->file('cover_image');
+        $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+        $uploadedImage->move('cover_image/', $imageName);
+
+        $Article = new Article([
+            'Author' => $request['Author'],
+            'title' => $request['title'],
+            'details' => $request['details'],
+            'cover_image' => $imageName,
+            'video' => $request['video'],
+            'tag' => $request['tag'],
+            'link' => $request['link'],
+            'star' => 0,
+            'status' => 1,
         ]);
-        try {
-            // Create a Article Article model instance
-            $Article = new Article();
-            $Article->title = $validatedData['title'];
-            $Article->description = $validatedData['description'];
-            $Article->details = $validatedData['details'];
-            $Article->tag = $validatedData['tag'];
-            // Assign other fields from the form
-
-            // Save the Article data to the database
-            $Article->save();
-
-            return response()->json(['message' => 'Data saved successfully'], 200);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'Failed to save data', 'error' => $e->getMessage()], 500);
-        }
+        $Article->save();
+        return response()->json(['message' => 'Data saved successfully'], 200);
     }
 
-    public function uploadimage(Request $request)
+    public function updateStatus(Request $request, $id)
     {
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->move('ArticleUploads/', $fileName); // Move file to desired directory
-            return response()->json(['imageUrl' => '/ArticleUploads/' . $fileName]);
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'status' => 'required|in:0,1',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 400);
         }
-        return response()->json(['error' => 'No image uploaded'], 400);
+
+        // Find the article by ID
+        $article = Article::find($id);
+
+        if (!$article) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Update the status
+        $article->status = $request->input('status');
+        $article->save();
+
+        return response()->json(['message' => 'Article status updated successfully']);
     }
 
+    public function delete($id)
+    {
+        // Find the article by ID
+        $article = Article::find($id);
+
+        if (!$article) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Delete the article
+        $article->delete();
+
+        return response()->json(['message' => 'Article deleted successfully']);
+    }
 
     public function create()
     {
@@ -67,13 +98,13 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        $Article = Article::find($id);
+        $article = News::find($id);
 
-        if (!$Article) {
-            return response()->json(['message' => 'Article not found'], 404);
+        if (!$article) {
+            return response()->json(['error' => 'Fake News not found'], 404);
         }
-
-        return response()->json($Article);
+        $article->cover_image = asset('cover_image/' . $article->cover_image);
+        return response()->json($article);
     }
 
     public function edit($id)
@@ -84,12 +115,27 @@ class ArticleController extends Controller
 
     public function update(Request $request, $id)
     {
-        // Validate and update the Article record
-        // ...
+        $Article = Article::find($id);
 
-        return redirect()->route('Article.show', $id)->with('success', 'Article updated successfully');
+        if ($request->file('cover_image')) {
+            $uploadedImage = $request->file('cover_image');
+            $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
+            $uploadedImage->move('cover_image/', $imageName);
+
+            $Article->title = $request->input('title');
+            $Article->details = $request->input('details');
+            $Article->cover_image = $imageName;
+            $Article->video = $request->input('video');
+            $Article->tag = $request->input('tag');
+            $Article->link = $request->input('link');
+            $Article->update();
+
+            return response()->json(['message' => 'Fake News updated successfully'], 200);
+        } else {
+            return response()->json(['message' => 'No images to upload'], 400);
+        }
     }
-
+    
     public function destroy($id)
     {
         $Article = Article::find($id);

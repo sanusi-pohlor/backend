@@ -50,11 +50,15 @@ class MediaChannelsController extends Controller // Update the controller class 
 
     public function update(Request $request, $id)
     {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
+        $validatedData = $request->validate([
+            'med_c_name' => 'required',
+        ]);
 
-        return redirect()->route('MediaChannels.show', $id)->with('success', 'MediaChannels updated successfully'); // Update the route name to 'users.show'
+        $MediaChannels = MediaChannels::find($id);
+        $MediaChannels->med_c_name = $validatedData['med_c_name'];
+        $MediaChannels->save();
+
+        return redirect()->route('MediaChannels.show', $id)->with('success', 'MediaChannels updated successfully');
     }
 
     public function destroy($id)

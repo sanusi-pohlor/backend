@@ -38,11 +38,33 @@ class DetailsNotiChannelsController extends Controller // Update the controller 
 
     public function store(Request $request)
     {
-        // Validate and store a new user record
-        // Use the 'User' model to create a new user
-        // ...
+        $validatedData = $request->validate([
+            'dnc_med_id' => 'required',
+            'dnc_info_id' => 'required',
+            'dnc_pub_id' => 'required',
+            'dnc_fm_d_id' => 'required',
+            'dnc_prob_id' => 'required',
+            'dnc_scop_pub' => 'required',
+            'dnc_num_mem_med' => 'required',
+            'dnc_date_med' => 'required',
+            'dnc_capt' => 'required',
+            'dnc_link' => 'required',
+        ]);
 
-        return redirect()->route('DetailsNotiChannels.index')->with('success', 'DetailsNotiChannels created successfully'); // Update the route name to 'users.index'
+        $DetailsNotiChannels = new ActionType();
+        $DetailsNotiChannels->dnc_med_id = $validatedData['dnc_med_id'];
+        $DetailsNotiChannels->dnc_info_id = $validatedData['dnc_info_id'];
+        $DetailsNotiChannels->dnc_pub_id = $validatedData['dnc_pub_id'];
+        $DetailsNotiChannels->dnc_fm_d_id = $validatedData['dnc_fm_d_id'];
+        $DetailsNotiChannels->dnc_prob_id = $validatedData['dnc_prob_id'];
+        $DetailsNotiChannels->dnc_scop_pub = $validatedData['dnc_scop_pub'];
+        $DetailsNotiChannels->dnc_num_mem_med = $validatedData['dnc_num_mem_med'];
+        $DetailsNotiChannels->dnc_date_med = $validatedData['dnc_date_med'];
+        $DetailsNotiChannels->dnc_capt = $validatedData['dnc_capt'];
+        $DetailsNotiChannels->dnc_link = $validatedData['dnc_link'];
+        $DetailsNotiChannels->save();
+
+        return redirect()->route('action_type.index')->with('success', 'ActionType created successfully');
     }
 
     public function show($id)
@@ -59,13 +81,48 @@ class DetailsNotiChannelsController extends Controller // Update the controller 
 
     public function update(Request $request, $id)
     {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
-
-        return redirect()->route('DetailsNotiChannels.show', $id)->with('success', 'DetailsNotiChannels updated successfully'); // Update the route name to 'users.show'
+        $validatedData = $request->validate([
+            'dnc_med_id' => 'required',
+            'dnc_info_id' => 'required',
+            'dnc_pub_id' => 'required',
+            'dnc_fm_d_id' => 'required',
+            'dnc_prob_id' => 'required',
+            'dnc_scop_pub' => 'required',
+            'dnc_num_mem_med' => 'required',
+            'dnc_date_med' => 'required',
+            'dnc_capt' => 'required',
+            'dnc_link' => 'required',
+        ]);
+    
+        $DetailsNotiChannels = DetailsNotiChannels::find($id);
+        $DetailsNotiChannels->dnc_med_id = $validatedData['dnc_med_id'];
+        $DetailsNotiChannels->dnc_info_id = $validatedData['dnc_info_id'];
+        $DetailsNotiChannels->dnc_pub_id = $validatedData['dnc_pub_id'];
+        $DetailsNotiChannels->dnc_fm_d_id = $validatedData['dnc_fm_d_id'];
+        $DetailsNotiChannels->dnc_prob_id = $validatedData['dnc_prob_id'];
+        $DetailsNotiChannels->dnc_scop_pub = $validatedData['dnc_scop_pub'];
+        $DetailsNotiChannels->dnc_num_mem_med = $validatedData['dnc_num_mem_med'];
+        $DetailsNotiChannels->dnc_date_med = $validatedData['dnc_date_med'];
+        $DetailsNotiChannels->dnc_capt = $validatedData['dnc_capt'];
+        $DetailsNotiChannels->dnc_link = $validatedData['dnc_link'];
+        $DetailsNotiChannels->save();
+    
+        return redirect()->route('DetailsNotiChannels.show', $id)->with('success', 'DetailsNotiChannels updated successfully');
     }
+    public function delete($id)
+    {
+        // Find the article by ID
+        $DetailsNotiChannels = DetailsNotiChannels::find($id);
 
+        if (!$DetailsNotiChannels) {
+            return response()->json(['error' => 'Article not found'], 404);
+        }
+
+        // Delete the article
+        $DetailsNotiChannels->delete();
+
+        return response()->json(['message' => 'Article deleted successfully']);
+    }
     public function destroy($id)
     {
         $DetailsNotiChannels = DetailsNotiChannels::find($id); // Use the correct model name 'User'
