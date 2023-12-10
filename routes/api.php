@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\MediaShareController;
 use App\Http\Controllers\ActionTypeController;
 use App\Http\Controllers\CheckingDataController;
 use App\Http\Controllers\DataCharacteristicsController;
@@ -38,7 +39,13 @@ use App\Http\Controllers\ProvinceController;
 Route::get('/data', [NewsController::class, 'index']);
 Route::get('/Adm_News_request', [NewsController::class, 'index']);
 Route::post('/Adm_News_upload', [NewsController::class, 'upload']);
-Route::post('/Adm_News_uploadimage', [NewsController::class, 'uploadimage']);
+
+Route::get('/Adm_Article_request', [ArticleController::class, 'index']);
+Route::post('/Adm_Article_upload', [ArticleController::class, 'upload']);
+
+Route::get('/Adm_MdShare_request', [MediaShareController::class, 'index']);
+Route::post('/Adm_MdShare_upload', [MediaShareController::class, 'upload']);
+
 // Route::post('/register', [RegisterController::class, 'Register']);
 // Route::post('/login', [AuthController::class, 'login']);
 
@@ -72,9 +79,15 @@ Route::get('/Province_request', [ProvinceController::class, 'index']);
 Route::get('/FakeNewsInfo_show/{id}', [FakeNewsInfoController::class, 'show']);
 Route::get('/AmUser', [UsersController::class, 'index']);
 Route::get('/ManageInfo_request', [FakeNewsInfoController::class, 'index']);
-Route::get('/News_show/{id}', [NewsController::class, 'show']);
+
 Route::get('/News_request', [NewsController::class, 'index']);
 Route::get('/News_show/{id}', [NewsController::class, 'show']);
+
+Route::get('/Article_request', [ArticleController::class, 'index']);
+Route::get('/Article_show/{id}', [ArticleController::class, 'show']);
+
+Route::get('/MdShare_request', [MediaShareController::class, 'index']);
+Route::get('/MdShare_show/{id}', [MediaShareController::class, 'show']);
 
 //update_manage_content
 Route::post('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update']);

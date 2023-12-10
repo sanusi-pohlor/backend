@@ -12,7 +12,6 @@ class ArticleController extends Controller
     public function index()
     {
         $Article = Article::all();
-        $ArticleWithImages = [];
 
         foreach ($Article as $item) {
             $ArticleWith[] = [
@@ -49,7 +48,7 @@ class ArticleController extends Controller
     public function updateStatus(Request $request, $id)
     {
         // Validate the request data
-        $validator = Validator::make($request->all(), [
+        $validator = Article::make($request->all(), [
             'status' => 'required|in:0,1',
         ]);
 
@@ -98,7 +97,7 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        $article = News::find($id);
+        $article = Article::find($id);
 
         if (!$article) {
             return response()->json(['error' => 'Fake News not found'], 404);

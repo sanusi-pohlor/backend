@@ -12,6 +12,7 @@ class MediaShareController extends Controller
     public function index()
     {
         $MediaShare = MediaShare::all();
+        
         foreach ($MediaShare as $item) {
             $WithMediaShare[] = [
                 'id' => $item->id,
@@ -20,7 +21,7 @@ class MediaShareController extends Controller
                 'cover_image' => asset('cover_image/' . $item->cover_image),
             ];        
         }
-        return response()->json($WithMediaShare);
+        return response()->json($WithMediaShare, 200);
     }
 
     public function upload(Request $request)
@@ -47,7 +48,7 @@ class MediaShareController extends Controller
     public function updateStatus(Request $request, $id)
     {
         // Validate the request data
-        $validator = Validator::make($request->all(), [
+        $validator = MediaShare::make($request->all(), [
             'status' => 'required|in:0,1',
         ]);
 
@@ -56,7 +57,7 @@ class MediaShareController extends Controller
         }
 
         // Find the article by ID
-        $MediaShare = Article::find($id);
+        $MediaShare = MediaShare::find($id);
 
         if (!$MediaShare) {
             return response()->json(['error' => 'Article not found'], 404);
@@ -72,7 +73,7 @@ class MediaShareController extends Controller
     public function delete($id)
     {
         // Find the article by ID
-        $MediaShare = Article::find($id);
+        $MediaShare = MediaShare::find($id);
 
         if (!$MediaShare) {
             return response()->json(['error' => 'Article not found'], 404);

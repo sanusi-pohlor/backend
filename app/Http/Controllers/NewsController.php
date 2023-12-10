@@ -12,7 +12,6 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all();
-        $newsWithImages = [];
 
         foreach ($news as $item) {
             $newsWith[] = [
@@ -51,7 +50,7 @@ class NewsController extends Controller
     public function updateStatus(Request $request, $id)
     {
         // Validate the request data
-        $validator = Validator::make($request->all(), [
+        $validator = News::make($request->all(), [
             'status' => 'required|in:0,1',
         ]);
 
@@ -60,7 +59,7 @@ class NewsController extends Controller
         }
 
         // Find the article by ID
-        $news = Article::find($id);
+        $news = News::find($id);
 
         if (!$news) {
             return response()->json(['error' => 'Article not found'], 404);
@@ -76,7 +75,7 @@ class NewsController extends Controller
     public function delete($id)
     {
         // Find the article by ID
-        $news = Article::find($id);
+        $news = News::find($id);
 
         if (!$news) {
             return response()->json(['error' => 'Article not found'], 404);
