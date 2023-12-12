@@ -117,7 +117,6 @@ Route::post('/TypeInformation_upload', [TypeInformationController::class, 'uploa
 Route::post('/VolunteerMembers_upload', [VolunteerMembersController::class, 'upload']);
 Route::post('/FakeNewsInfo_upload', [FakeNewsInfoController::class, 'upload']);
 Route::post('/updateFakeNewsStatus/{id}', [FakeNewsInfoController::class, 'UpStatus']);
-Route::post('/updateFakeNewsStatus/{id}', [FakeNewsInfoController::class, 'UpStatus']);
 Route::post('/Manage_Fake_Info_upload', [ManageFakeNewInfoController::class, 'upload']);
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
