@@ -19,6 +19,12 @@ class NewsController extends Controller
                 'title' => $item->title,
                 'details' => $item->details,
                 'cover_image' => asset('cover_image/' . $item->cover_image),
+                'tag' => $item->tag,
+                'link' => $item->link,
+                'star' => $item->star,
+                'Author' => $item->Author,
+                'status' => $item->status,
+                'created_at' => $item->created_at,
             ];
         }
 
