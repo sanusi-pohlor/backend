@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Motivation; // Update the model class name to singular 'User'
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class MotivationController extends Controller // Update the controller class name to 'UsersController'

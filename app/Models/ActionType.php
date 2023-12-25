@@ -10,6 +10,6 @@ class ActionType extends Model
     use HasFactory;
 
     protected $fillable = [
-        'act_ty_id', 'act_ty_name',
+        'id', 'act_ty_name',
     ];
 }
