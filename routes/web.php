@@ -14,6 +14,5 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    $users = User::all();
-    return view('welcome', ['users' => $users]);
+    return view('welcome');
 });
