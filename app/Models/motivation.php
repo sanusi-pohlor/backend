@@ -9,6 +9,6 @@ class Motivation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'moti_id','moti_name',
+        'id','moti_name',
     ];
 }
