@@ -48,15 +48,7 @@ class FormatDataController extends Controller // Update the controller class nam
         $FormatData = FormatData::find($id); // Use the correct model name 'User'
         return view('FormatData.edit', ['FormatData' => $FormatData]); // Update the view name to 'users.edit'
     }
-
-    public function update(Request $request, $id)
-    {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
-
-        return redirect()->route('FormatData.show', $id)->with('success', 'FormatData updated successfully'); // Update the route name to 'users.show'
-    }
+    
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
