@@ -51,14 +51,6 @@ class FormatDataController extends Controller // Update the controller class nam
 
     public function update(Request $request, $id)
     {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
-
-        return redirect()->route('FormatData.show', $id)->with('success', 'FormatData updated successfully'); // Update the route name to 'users.show'
-    }
-    public function update(Request $request, $id)
-    {
         $validatedData = $request->validate([
             'fm_d_name' => 'required',
             // Add more validation rules as needed
