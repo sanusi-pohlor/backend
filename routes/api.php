@@ -89,6 +89,8 @@ Route::get('/Article_show/{id}', [ArticleController::class, 'show']);
 Route::get('/MdShare_request', [MediaShareController::class, 'index']);
 Route::get('/MdShare_show/{id}', [MediaShareController::class, 'show']);
 
+Route::get('/Manage_Fake_Info_show/{id}', [ManageFakeNewInfoController::class, 'show']);
+
 //update_manage_content
 Route::post('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update']);
 Route::post('/User_update/{id}', [AuthController::class, 'update']);
