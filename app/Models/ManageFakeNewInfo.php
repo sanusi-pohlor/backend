@@ -28,6 +28,7 @@ class ManageFakeNewInfo extends Model
         'mfi_moti',
         'mfi_iteration',
         'mfi_che_d',
-        'mfi_data_cha'
+        'mfi_data_cha',
+        'mfi_fninfo',
     ];
 }

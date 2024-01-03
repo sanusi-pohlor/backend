@@ -37,6 +37,7 @@ class ManageFakeNewInfoController extends Controller
                 'mfi_iteration' => $request['mfi_iteration'],
                 'mfi_che_d' => $request['mfi_che_d'],
                 'mfi_data_cha' => $request['mfi_data_cha'],
+                'mfi_fninfo' => $request['mfi_fninfo'],
             ]);
             $FakeNewsInfo->save();
             return response()->json(['message' => 'Data received and processed'], 200);
