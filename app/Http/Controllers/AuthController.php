@@ -22,9 +22,9 @@ class AuthController extends Controller
             'phone_number' => $request->input('phone_number'),
             'Id_line' => $request->input('Id_line'),
             'province' => $request->input('province'),
-            //'receive_ct_email' => $request->input('receive_ct_email'),
-            // 'about' => 3,
-            // 'level' => 3,
+            'receive_ct_email' => $request->input('receive_ct_email'),
+            'about' => 3,
+            'level' => 3,
         ]);
 
         $token = $user->createToken('Token')->plainTextToken;
