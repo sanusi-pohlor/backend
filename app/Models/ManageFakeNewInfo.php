@@ -30,5 +30,6 @@ class ManageFakeNewInfo extends Model
         'mfi_che_d',
         'mfi_data_cha',
         'mfi_fninfo',
+        'mfi_results',
     ];
 }
