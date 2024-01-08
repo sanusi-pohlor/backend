@@ -24,6 +24,10 @@ class NewsController extends Controller
                 'star' => $item->star,
                 'Author' => $item->Author,
                 'status' => $item->status,
+                'type_new' => $item->type_new,
+                'med_new' => $item->med_new,
+                'prov_new' => $item->prov_new,
+                'key_new' => $item->key_new,
                 'created_at' => $item->created_at,
             ];
         }
@@ -48,6 +52,10 @@ class NewsController extends Controller
             'link' => $request['link'],
             'star' => 0,
             'status' => 1,
+            'type_new' => $request['type_new'],
+            'med_new' => $request['med_new'],
+            'prov_new' => $request['prov_new'],
+            'key_new' => $request['key_new'],
         ]);
         $news->save();
         return response()->json(['message' => 'Data saved successfully'], 200);
@@ -137,6 +145,10 @@ class NewsController extends Controller
             $News->video = $request->input('video');
             $News->tag = $request->input('tag');
             $News->link = $request->input('link');
+            $News->type_new = $request->input('type_new');
+            $News->med_new = $request->input('med_new');
+            $News->prov_new = $request->input('prov_new');
+            $News->key_new = $request->input('key_new');
             $News->update();
 
             return response()->json(['message' => 'Fake News updated successfully'], 200);
