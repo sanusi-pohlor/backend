@@ -35,6 +35,7 @@ use App\Http\Controllers\FakeNewsInfoController;
 use App\Http\Controllers\ManageFakeNewInfoController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\TagController;
 
 Route::get('/data', [NewsController::class, 'index']);
 Route::get('/Adm_News_request', [NewsController::class, 'index']);
@@ -46,6 +47,8 @@ Route::post('/Adm_Article_upload', [ArticleController::class, 'upload']);
 Route::get('/Adm_MdShare_request', [MediaShareController::class, 'index']);
 Route::post('/Adm_MdShare_upload', [MediaShareController::class, 'upload']);
 
+Route::get('/Tags_request', [TagController::class, 'index']);
+Route::post('/Tags_upload', [TagController::class, 'upload']);
 // Route::post('/register', [RegisterController::class, 'Register']);
 // Route::post('/login', [AuthController::class, 'login']);
 
