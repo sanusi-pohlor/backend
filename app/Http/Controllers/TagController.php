@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tag;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Tag;
 
-class Tag extends Controller
+class TagController extends Controller
 {
     public function index()
     {
@@ -65,3 +65,5 @@ class Tag extends Controller
         return redirect()->route('Tag.index')->with('success', 'Tag deleted successfully'); // Update the route name to 'users.index'
     }
 }
+
+
