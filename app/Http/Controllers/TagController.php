@@ -4,66 +4,74 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Tag;
+use App\Models\Tags; // Update this if necessary
 
 class TagController extends Controller
 {
     public function index()
     {
-        $Tag = Tag::all(); // Use the correct model name 'User'
-        return response()->json($Tag);        }
+        $tags = Tags::all();
+        return response()->json($tags);
+    }
 
     public function upload(Request $request)
     {
-        $Tag = new Tag([
-            'tag' => $request['tag'],
+        // Add validation for the input data if needed
+
+        $tag = new Tags([
+            'tag_name' => $request['tag_name'],
         ]);
-        $Tag->save();
+        $tag->save();
+
         return response()->json(['message' => 'Data received and processed'], 200);
     }
 
     public function create()
     {
-        return view('Tag.create');
+        return view('tags.create'); // Update the view name if necessary
     }
 
     public function store(Request $request)
     {
-        // Validate and store a new user record
-        // Use the 'User' model to create a new user
-        // ...
+        // Implement validation for the input data
 
-        return redirect()->route('Tag.index')->with('success', 'Tag created successfully'); // Update the route name to 'users.index'
+        $tag = new Tags([
+            'tag' => $request['tag'],
+        ]);
+        $tag->save();
+
+        return redirect()->route('tags.index')->with('success', 'Tag created successfully');
     }
 
     public function show($id)
     {
-        $Tag = Tag::find($id); // Use the correct model name 'User'
-        return view('Tag.show', ['Tag' => $Tag]); // Update the view name to 'users.show'
+        $tag = Tags::find($id);
+        return view('tags.show', ['tag' => $tag]); // Update the view name if necessary
     }
 
     public function edit($id)
     {
-        $Tag = Tag::find($id); // Use the correct model name 'User'
-        return view('Tag.edit', ['Tag' => $Tag]); // Update the view name to 'users.edit'
+        $tag = Tags::find($id);
+        return view('tags.edit', ['tag' => $tag]); // Update the view name if necessary
     }
 
     public function update(Request $request, $id)
     {
-        // Validate and update the user record
-        // Use the 'User' model to update the user
-        // ...
+        // Implement validation for the input data
 
-        return redirect()->route('Tag.show', $id)->with('success', 'Tag updated successfully'); // Update the route name to 'users.show'
+        $tag = Tags::find($id);
+        $tag->update([
+            'tag' => $request['tag'],
+        ]);
+
+        return redirect()->route('tags.show', $id)->with('success', 'Tag updated successfully');
     }
 
     public function destroy($id)
     {
-        $Tag = Tag::find($id); // Use the correct model name 'User'
-        $Tag->delete(); // Use the 'delete' method to delete the user
+        $tag = Tags::find($id);
+        $tag->delete();
 
-        return redirect()->route('Tag.index')->with('success', 'Tag deleted successfully'); // Update the route name to 'users.index'
+        return redirect()->route('tags.index')->with('success', 'Tag deleted successfully');
     }
 }
-
-
