@@ -99,11 +99,18 @@ Route::post('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update
 Route::post('/User_update/{id}', [AuthController::class, 'update']);
 
 //edit_manage_content
+Route::get('/Adm_News_edit/{id}', [NewsController::class, 'edit']);
+Route::get('/Adm_MdShare_edit/{id}', [MediaShareController::class, 'edit']);
+Route::get('/Adm_Article_edit/{id}', [ArticleController::class, 'edit']);
+
 Route::get('/FakeNewsInfo_edit/{id}', [FakeNewsInfoController::class, 'edit']);
 Route::get('/User_edit/{id}', [AuthController::class, 'edit']);
 
 //delete_manage_content
 Route::delete('FakeNewsInfo_delete/{id}', [FakeNewsInfoController::class, 'destroy']);
+Route::delete('Adm_News_delete/{id}', [NewsController::class, 'destroy']);
+Route::delete('Adm_MdShare_delete/{id}', [MediaShareController::class, 'destroy']);
+Route::delete('Adm_Article_delete/{id}', [ArticleController::class, 'destroy']);
 
 //upload_manage_content
 Route::post('/ActionType_upload', [ActionTypeController::class, 'upload']);

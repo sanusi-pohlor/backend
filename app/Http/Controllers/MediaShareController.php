@@ -24,6 +24,10 @@ class MediaShareController extends Controller
                 'star' => $item->star,
                 'Author' => $item->Author,
                 'status' => $item->status,
+                'type_new' => $item->type_new,
+                'med_new' => $item->med_new,
+                'prov_new' => $item->prov_new,
+                'key_new' => $item->key_new,
                 'created_at' => $item->created_at,
             ];        
         }
@@ -46,6 +50,10 @@ class MediaShareController extends Controller
             'link' => $request['link'],
             'star' => 0,
             'status' => 1,
+            'type_new' => $request['type_new'],
+            'med_new' => $request['med_new'],
+            'prov_new' => $request['prov_new'],
+            'key_new' => $request['key_new'],
         ]);
         $MediaShare->save();
         return response()->json(['message' => 'Data saved successfully'], 200);
@@ -129,12 +137,15 @@ class MediaShareController extends Controller
             $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
             $uploadedImage->move('cover_image/', $imageName);
 
-            $MediaShare->title = $request->input('title');
             $MediaShare->details = $request->input('details');
             $MediaShare->cover_image = $imageName;
             $MediaShare->video = $request->input('video');
             $MediaShare->tag = $request->input('tag');
             $MediaShare->link = $request->input('link');
+            $MediaShare->type_new = $request->input('type_new');
+            $MediaShare->med_new = $request->input('med_new');
+            $MediaShare->prov_new = $request->input('prov_new');
+            $MediaShare->key_new = $request->input('key_new');
             $MediaShare->update();
 
             return response()->json(['message' => 'Fake News updated successfully'], 200);

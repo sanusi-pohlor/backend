@@ -24,6 +24,10 @@ class ArticleController extends Controller
                 'star' => $item->star,
                 'Author' => $item->Author,
                 'status' => $item->status,
+                'type_new' => $item->type_new,
+                'med_new' => $item->med_new,
+                'prov_new' => $item->prov_new,
+                'key_new' => $item->key_new,
                 'created_at' => $item->created_at,
             ];
         }
@@ -46,6 +50,10 @@ class ArticleController extends Controller
             'link' => $request['link'],
             'star' => 0,
             'status' => 1,
+            'type_new' => $request['type_new'],
+            'med_new' => $request['med_new'],
+            'prov_new' => $request['prov_new'],
+            'key_new' => $request['key_new'],
         ]);
         $Article->save();
         return response()->json(['message' => 'Data saved successfully'], 200);
@@ -127,15 +135,18 @@ class ArticleController extends Controller
             $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
             $uploadedImage->move('cover_image/', $imageName);
 
-            $Article->title = $request->input('title');
             $Article->details = $request->input('details');
             $Article->cover_image = $imageName;
             $Article->video = $request->input('video');
             $Article->tag = $request->input('tag');
             $Article->link = $request->input('link');
+            $Article->type_new = $request->input('type_new');
+            $Article->med_new = $request->input('med_new');
+            $Article->prov_new = $request->input('prov_new');
+            $Article->key_new = $request->input('key_new');
             $Article->update();
 
-            return response()->json(['message' => 'Fake News updated successfully'], 200);
+            return response()->json(['message' => 'Fake Article updated successfully'], 200);
         } else {
             return response()->json(['message' => 'No images to upload'], 400);
         }
