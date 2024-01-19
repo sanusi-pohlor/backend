@@ -118,7 +118,6 @@ class FakeNewsInfoController extends Controller
         return response()->json(['message' => 'Fake News deleted successfully'], 200);
     }
 
-    // ตัวอย่าง code ใน Laravel
     public function UpStatus(Request $request, $id)
     {
         $fakeNewsInfo = FakeNewsInfo::find($id); // หาข้อมูลจาก ID

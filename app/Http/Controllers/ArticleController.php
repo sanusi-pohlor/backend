@@ -151,12 +151,16 @@ class ArticleController extends Controller
             return response()->json(['message' => 'No images to upload'], 400);
         }
     }
-    
+
     public function destroy($id)
     {
-        $Article = Article::find($id);
-        $Article->delete();
+        try {
+            $article = Article::findOrFail($id);
+            $article->delete();
 
-        return redirect()->route('Article.index')->with('success', 'Article deleted successfully');
+            return response()->json('Article deleted successfully');
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error deleting article'], 500);
+        }
     }
 }
