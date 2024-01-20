@@ -12,7 +12,7 @@ class MediaShareController extends Controller
     public function index()
     {
         $MediaShare = MediaShare::all();
-        
+
         foreach ($MediaShare as $item) {
             $WithMediaShare[] = [
                 'id' => $item->id,
@@ -29,14 +29,14 @@ class MediaShareController extends Controller
                 'prov_new' => $item->prov_new,
                 'key_new' => $item->key_new,
                 'created_at' => $item->created_at,
-            ];        
+            ];
         }
         return response()->json($WithMediaShare, 200);
     }
 
     public function upload(Request $request)
     {
-        $uploadedImage  = $request->file('cover_image');
+        $uploadedImage = $request->file('cover_image');
         $imageName = time() . '.' . $uploadedImage->getClientOriginalExtension();
         $uploadedImage->move('cover_image/', $imageName);
 
@@ -156,9 +156,13 @@ class MediaShareController extends Controller
 
     public function destroy($id)
     {
-        $MediaShare = MediaShare::find($id);
-        $MediaShare->delete();
+        try {
+            $MediaShare = MediaShare::findOrFail($id);
+            $MediaShare->delete();
 
-        return redirect()->route('MediaShare.index')->with('success', 'MediaShare deleted successfully');
+            return response()->json('MediaShare deleted successfully');
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error deleting MediaShare'], 500);
+        }
     }
 }

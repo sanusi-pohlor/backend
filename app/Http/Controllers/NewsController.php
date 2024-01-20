@@ -63,42 +63,35 @@ class NewsController extends Controller
 
     public function updateStatus(Request $request, $id)
     {
-        // Validate the request data
-        $validator = News::make($request->all(), [
+        $request->validate([
             'status' => 'required|in:0,1',
         ]);
-
-        if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 400);
-        }
-
-        // Find the article by ID
+    
         $news = News::find($id);
-
+    
         if (!$news) {
-            return response()->json(['error' => 'Article not found'], 404);
+            return response()->json(['error' => 'News not found'], 404);
         }
-
-        // Update the status
+    
         $news->status = $request->input('status');
         $news->save();
-
-        return response()->json(['message' => 'Article status updated successfully']);
-    }
+    
+        return response()->json(['message' => 'News status updated successfully'], 200);
+    }    
 
     public function delete($id)
     {
-        // Find the article by ID
+        // Find the News by ID
         $news = News::find($id);
 
         if (!$news) {
-            return response()->json(['error' => 'Article not found'], 404);
+            return response()->json(['error' => 'News not found'], 404);
         }
 
-        // Delete the article
+        // Delete the News
         $news->delete();
 
-        return response()->json(['message' => 'Article deleted successfully']);
+        return response()->json(['message' => 'News deleted successfully']);
     }
     public function create()
     {
@@ -159,9 +152,13 @@ class NewsController extends Controller
 
     public function destroy($id)
     {
-        $News = News::find($id);
-        $News->delete();
+        try {
+            $News = News::findOrFail($id);
+            $News->delete();
 
-        return redirect()->route('News.index')->with('success', 'News deleted successfully');
+            return response()->json('News deleted successfully');
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error deleting News'], 500);
+        }
     }
 }
