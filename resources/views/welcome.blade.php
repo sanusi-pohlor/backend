@@ -4,9 +4,6 @@
     <title>Welcome</title>
 </head>
 <body>
-    <h1>List of Users</h1>
-    <ul>
-       ssss
-    </ul>
+    <h1>Total number of users: {{ count($users) }}</h1>
 </body>
 </html>

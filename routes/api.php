@@ -37,27 +37,34 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\TagController;
 
-Route::get('/data', [NewsController::class, 'index']);
-Route::get('/Adm_News_request', [NewsController::class, 'index']);
+Route::get('/adm-News-request', [NewsController::class, 'index']);
+Route::get('/Adm_News_edit/{id}', [NewsController::class, 'edit']);
 Route::post('/Adm_News_upload', [NewsController::class, 'upload']);
+Route::post('/Adm_News_update/{id}', [NewsController::class, 'update']);
+Route::put('/Adm_News_update_status/{id}', [NewsController::class, 'updateStatus']);
+Route::get('/News_request', [NewsController::class, 'index']);
+Route::get('/News_show/{id}', [NewsController::class, 'show']);
+Route::get('/Adm_News_edit/{id}', [NewsController::class, 'edit']);
+Route::delete('Adm_News_delete/{id}', [NewsController::class, 'destroy']);
 
 Route::get('/Adm_Article_request', [ArticleController::class, 'index']);
 Route::post('/Adm_Article_upload', [ArticleController::class, 'upload']);
+Route::put('/Adm_Article_update_status/{id}', [ArticleController::class, 'updateStatus']);
+Route::get('/Article_request', [ArticleController::class, 'index']);
+Route::get('/Article_show/{id}', [ArticleController::class, 'show']);
+Route::get('/Adm_Article_edit/{id}', [ArticleController::class, 'edit']);
+Route::delete('Adm_Article_delete/{id}', [ArticleController::class, 'destroy']);
 
 Route::get('/Adm_MdShare_request', [MediaShareController::class, 'index']);
 Route::post('/Adm_MdShare_upload', [MediaShareController::class, 'upload']);
+Route::put('/Adm_MdShare_update_status/{id}', [MediaShareController::class, 'updateStatus']);
+Route::get('/MdShare_request', [MediaShareController::class, 'index']);
+Route::get('/MdShare_show/{id}', [MediaShareController::class, 'show']);
+Route::get('/Adm_MdShare_edit/{id}', [MediaShareController::class, 'edit']);
+Route::delete('Adm_MdShare_delete/{id}', [MediaShareController::class, 'destroy']);
 
 Route::get('/Tags_request', [TagController::class, 'index']);
 Route::post('/Tags_upload', [TagController::class, 'upload']);
-// Route::post('/register', [RegisterController::class, 'Register']);
-// Route::post('/login', [AuthController::class, 'login']);
-
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-Route::middleware('auth.bearer')->group(function () {
-    // เส้นทาง API ที่ต้องการให้มีการ Authentication
-});
 
 //request_manage_content
 Route::get('/ActionType_request', [ActionTypeController::class, 'index']);
@@ -78,40 +85,6 @@ Route::get('/FakeNewsInfo_request', [FakeNewsInfoController::class, 'index']);
 Route::get('/Manage_Fake_Info_request', [ManageFakeNewInfoController::class, 'index']);
 Route::get('/Province_request', [ProvinceController::class, 'index']);
 
-//show_manage_content
-Route::get('/FakeNewsInfo_show/{id}', [FakeNewsInfoController::class, 'show']);
-Route::get('/AmUser', [UsersController::class, 'index']);
-Route::get('/ManageInfo_request', [FakeNewsInfoController::class, 'index']);
-
-Route::get('/News_request', [NewsController::class, 'index']);
-Route::get('/News_show/{id}', [NewsController::class, 'show']);
-
-Route::get('/Article_request', [ArticleController::class, 'index']);
-Route::get('/Article_show/{id}', [ArticleController::class, 'show']);
-
-Route::get('/MdShare_request', [MediaShareController::class, 'index']);
-Route::get('/MdShare_show/{id}', [MediaShareController::class, 'show']);
-
-Route::get('/Manage_Fake_Info_show/{id}', [ManageFakeNewInfoController::class, 'show']);
-
-//update_manage_content
-Route::post('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update']);
-Route::post('/User_update/{id}', [AuthController::class, 'update']);
-
-//edit_manage_content
-Route::get('/Adm_News_edit/{id}', [NewsController::class, 'edit']);
-Route::get('/Adm_MdShare_edit/{id}', [MediaShareController::class, 'edit']);
-Route::get('/Adm_Article_edit/{id}', [ArticleController::class, 'edit']);
-
-Route::get('/FakeNewsInfo_edit/{id}', [FakeNewsInfoController::class, 'edit']);
-Route::get('/User_edit/{id}', [AuthController::class, 'edit']);
-
-//delete_manage_content
-Route::delete('FakeNewsInfo_delete/{id}', [FakeNewsInfoController::class, 'destroy']);
-Route::delete('Adm_News_delete/{id}', [NewsController::class, 'destroy']);
-Route::delete('Adm_MdShare_delete/{id}', [MediaShareController::class, 'destroy']);
-Route::delete('Adm_Article_delete/{id}', [ArticleController::class, 'destroy']);
-
 //upload_manage_content
 Route::post('/ActionType_upload', [ActionTypeController::class, 'upload']);
 Route::post('/CheckingData_upload', [CheckingDataController::class, 'upload']);
@@ -130,9 +103,25 @@ Route::post('/VolunteerMembers_upload', [VolunteerMembersController::class, 'upl
 Route::post('/FakeNewsInfo_upload', [FakeNewsInfoController::class, 'upload']);
 Route::post('/updateFakeNewsStatus/{id}', [FakeNewsInfoController::class, 'UpStatus']);
 Route::post('/Manage_Fake_Info_upload', [ManageFakeNewInfoController::class, 'upload']);
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+
+//show_manage_content
+Route::get('/FakeNewsInfo_show/{id}', [FakeNewsInfoController::class, 'show']);
+Route::get('/AmUser', [UsersController::class, 'index']);
+Route::get('/AllUser/{id}', [UsersController::class, 'show']);
+Route::get('/ManageInfo_request', [FakeNewsInfoController::class, 'index']);
+
+Route::get('/Manage_Fake_Info_show/{id}', [ManageFakeNewInfoController::class, 'show']);
+
+//update_manage_content
+Route::post('/FakeNewsInfo_update/{id}', [FakeNewsInfoController::class, 'update']);
+Route::post('/User_update/{id}', [AuthController::class, 'update']);
+
+//edit_manage_content
+Route::get('/FakeNewsInfo_edit/{id}', [FakeNewsInfoController::class, 'edit']);
+Route::get('/User_edit/{id}', [AuthController::class, 'edit']);
+
+//delete_manage_content
+Route::delete('FakeNewsInfo_delete/{id}', [FakeNewsInfoController::class, 'destroy']);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);

@@ -1,0 +1,1408 @@
+# Webalizer V2.23-08 Incremental Data - 02/07/2024 23:26:17
+2024 2 7 23 26 17
+13846 11033 174 241 21 85 83949247 12790 290 0
+26 46 1061 1 7
+629 538 3204936 41 580 43
+3589 3076 23378917 33 3229 51
+86 78 2802348 20 49 20
+749 550 2998941 21 605 21
+2140 1638 10065120 36 1917 45
+5356 4204 20172361 28 5162 72
+1297 949 21326624 26 1248 39
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+207 147 2644879 202
+13 13 18007 10
+78 57 2040340 46
+6 4 9142 3
+96 74 2989111 52
+48 46 1938367 23
+69 61 2318355 45
+126 106 3194207 91
+255 200 2656540 195
+559 451 3000548 541
+961 814 3179915 943
+1442 1104 4146016 1407
+34 13 137922 16
+1120 800 1308051 1120
+1666 1288 4160428 1628
+971 882 2270709 959
+1055 826 6612359 1049
+91 73 397037 91
+932 817 12463425 781
+582 521 2229343 441
+336 283 3703925 301
+932 776 3681273 643
+1005 710 3891701 974
+1262 967 14957647 1229
+874
+0
+0
+11033
+0
+0
+0
+1320
+0
+0
+0
+14
+0
+0
+211
+0
+0
+0
+7
+0
+4
+202
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+181
+0
+0
+0
+0
+0
+# -urls- 
+/phpmyadmin/js/dist/common.js
+0 3 0 4785 0 0
+/api/CheckingData_request
+0 3 0 1077 0 0
+/cover_image/1706866325.jpg
+0 10 0 310283 0 0
+/phpmyadmin/themes/pmahomme/img/b_engine.png
+0 4 0 1784 0 0
+/phpmyadmin/js/vendor/jquery/jquery.validate.min.js
+0 3 0 23913 0 0
+/cover_image/1707226651.jpg
+0 3 0 56104 0 0
+/phpmyadmin/themes/pmahomme/img/b_drop.png
+0 3 0 2055 0 0
+/phpmyadmin/js/vendor/jquery/jquery.debounce-1.0.6.js
+0 3 0 2043 0 0
+/phpmyadmin/js/dist/multi_column_sort.js
+0 3 0 1719 0 0
+/api/User/26
+0 2 0 627 0 0
+/phpmyadmin/js/vendor/codemirror/addon/hint/show-hint.css
+0 3 0 1227 0 0
+/api/News_show/131
+0 2 0 861 0 0
+/cover_image/1707228002_65c23b62ae33a.jpg
+0 1 0 55884 0 0
+/fn_info_image/1706864616.jpg
+0 4 0 88818 0 0
+/phpmyadmin/themes/pmahomme/img/s_status.png
+0 4 0 2588 0 0
+/phpmyadmin/themes/pmahomme/css/theme.css
+0 3 0 188508 0 0
+/cover_image/1707235445.jpg
+0 11 0 124931 0 0
+/cover_image/1707227858.jpg
+0 2 0 55963 0 0
+/api/Adm_MdShare_request
+0 7 0 17453 0 0
+/api/FakeNewsInfo_show/104
+0 2 0 572 0 0
+/cover_image/1707204814.jpg
+0 2 0 43073 0 0
+/phpmyadmin/themes/pmahomme/img/b_view_add.png
+0 3 0 2178 0 0
+/phpmyadmin/js/dist/menu_resizer.js
+0 3 0 5940 0 0
+/cover_image/1707228724_65c23e3494c9a.jpg
+0 2 0 82509 0 0
+/phpmyadmin/
+0 274 0 1413534 3 1
+/api/News_show/120
+0 1 0 1106 0 0
+/api/News_show/119
+0 1 0 1853 0 0
+/phpmyadmin/js/vendor/jquery/additional-methods.js
+0 1 0 13987 0 0
+/phpmyadmin/js/dist/shortcuts_handler.js
+0 3 0 2688 0 0
+/phpmyadmin/themes/pmahomme/img/s_db.png
+0 3 0 1128 0 0
+/phpmyadmin/themes/pmahomme/img/b_spatial.png
+0 3 0 1272 0 0
+/cover_image/1706194821.jpg
+0 33 0 1191214 0 0
+/cover_image/1706499183.jpg
+0 34 0 1270773 0 0
+/phpmyadmin/themes/pmahomme/img/b_insrow.png
+0 3 0 612 0 0
+/api/News_show/139
+0 23 0 73614 0 1
+/api/Adm_News_edit/116
+0 23 0 23677 0 0
+/cover_image/1706500045.jpg
+0 39 0 932706 0 0
+/cover_image/1706499884.jpg
+0 36 0 1031162 0 0
+/api/DetailsNotiChannels_request
+0 231 0 54205 3 1
+/phpmyadmin/themes/pmahomme/img/b_calendar.png
+0 1 0 674 0 0
+/api/News_show/117
+0 3 0 7896 0 0
+/phpmyadmin/js/dist/name-conflict-fixes.js
+0 3 0 314 0 0
+/phpmyadmin/js/dist/drag_drop_import.js
+0 3 0 10530 0 0
+/phpmyadmin/themes/pmahomme/img/b_tbloptimize.png
+0 3 0 600 0 0
+/api/User/undefined
+0 1 0 241 0 0
+/phpmyadmin/themes/pmahomme/img/bd_empty.png
+0 4 0 1500 0 0
+/phpmyadmin/themes/pmahomme/img/b_plugin.png
+0 4 0 2267 0 0
+/phpmyadmin/themes/pmahomme/img/s_top.png
+0 3 0 798 0 0
+/api/User_edit/26
+0 37 0 7823 0 0
+/api/Adm_News_edit/128
+0 4 0 1172 0 0
+/cover_image/1706499781.jpg
+0 39 0 2389972 0 0
+/phpmyadmin/themes/pmahomme/img/s_loggoff.png
+0 3 0 2022 0 0
+/phpmyadmin/themes/pmahomme/img/b_primary.png
+0 3 0 1847 0 0
+/api/MediaChannels_upload
+0 1 0 284 0 0
+/phpmyadmin/themes/pmahomme/img/b_unique.png
+0 3 0 1893 0 0
+/phpmyadmin/js/vendor/sprintf.js
+0 3 0 8055 0 0
+/api/FormatData_request
+0 295 0 60532 3 0
+/phpmyadmin/themes/pmahomme/jquery/jquery-ui.css
+0 3 0 25748 0 0
+/api/FakeNewsInfo_show/50
+0 50 0 15384 0 0
+/phpmyadmin/js/vendor/codemirror/addon/lint/lint.js
+0 3 0 9069 0 0
+/phpmyadmin/themes/pmahomme/img/console.png
+0 3 0 1017 0 0
+/api/Adm_News_request
+0 51 0 486705 0 1
+/phpmyadmin/themes/pmahomme/img/b_props.png
+0 3 0 1871 0 0
+/phpmyadmin/js/vendor/jquery/jquery.min.js
+0 3 0 93432 0 0
+/phpmyadmin/themes/pmahomme/img/logo_left.png
+0 3 0 8307 0 0
+/phpmyadmin/js/dist/page_settings.js
+0 3 0 2196 0 0
+/phpmyadmin/js/vendor/codemirror/addon/runmode/runmode.js
+0 3 0 3618 0 0
+/cover_image/1706500111.jpg
+0 40 0 1134939 0 0
+/phpmyadmin/js/dist/functions.js
+0 3 0 114228 0 0
+/phpmyadmin/js/dist/ajax.js
+0 3 0 23604 0 0
+/phpmyadmin/themes/pmahomme/img/b_help.png
+0 3 0 2259 0 0
+/phpmyadmin/themes/pmahomme/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+0 1 0 237 0 0
+/api/Article_request
+0 225 0 626969 6 5
+/phpmyadmin/js/dist/error_report.js
+0 3 0 8214 0 0
+/phpmyadmin/themes/pmahomme/img/arrow_ltr.png
+0 3 0 441 0 0
+/phpmyadmin/js/dist/home.js
+0 1 0 1698 0 0
+/phpmyadmin/themes/pmahomme/img/s_asc.png
+0 4 0 772 0 0
+/phpmyadmin/js/dist/doclinks.js
+0 3 0 11376 0 0
+/api/Manage_Fake_Info_show/466
+0 1 0 382 0 0
+/phpmyadmin/js/dist/makegrid.js
+0 3 0 52971 0 0
+/phpmyadmin/themes/pmahomme/img/b_rename.svg
+0 3 0 1230 0 0
+/phpmyadmin/js/dist/export.js
+0 4 0 24313 0 0
+/api/Article_show/44
+0 3 0 4609 0 0
+/cover_image/1707228724_65c23e3494dd6.jpg
+0 2 0 42373 0 0
+/phpmyadmin/js/vendor/codemirror/lib/codemirror.css
+0 3 0 7692 0 0
+/api/News_show/140
+0 2 0 580 0 0
+/api/TypeInformation_request
+0 865 0 390602 8 14
+/phpmyadmin/themes/pmahomme/jquery/images/ui-icons_222222_256x240.png
+0 1 0 3813 0 0
+/api/News_request
+0 255 0 2218159 11 2
+/phpmyadmin/js/vendor/jquery/jquery-migrate.min.js
+0 3 0 14657 0 0
+/phpmyadmin/themes/pmahomme/img/b_no_favorite.png
+0 4 0 1700 0 0
+/api/FakeNewsInfo_show/102
+0 4 0 1244 0 0
+/cover_image/1706494618.jpg
+0 35 0 692362 0 0
+/phpmyadmin/themes/pmahomme/img/col_drop.png
+0 3 0 471 0 0
+/phpmyadmin/themes/pmahomme/img/b_browse.png
+0 3 0 1602 0 0
+/cover_image/1706494534.jpg
+0 35 0 1166592 0 0
+/api/AmUser
+0 468 0 212823 0 3
+/phpmyadmin/themes/pmahomme/img/b_export.png
+0 4 0 2248 0 0
+/api/Manage_Fake_Info_show/415
+0 1 0 387 0 0
+/phpmyadmin/js/dist/console.js
+0 3 0 30717 0 0
+/phpmyadmin/js/dist/codemirror/addon/lint/sql-lint.js
+0 3 0 1506 0 0
+/favicon.ico
+0 19 0 18906 0 0
+/phpmyadmin/themes/pmahomme/img/b_minus.png
+0 3 0 507 0 0
+/api/FakeNewsInfo_show/51
+0 1 0 294 0 0
+/cover_image/1706499082.jpg
+0 34 0 1227036 0 0
+/phpmyadmin/themes/pmahomme/img/b_plus.png
+0 3 0 570 0 0
+/cover_image/1706499665.jpg
+0 11 0 275405 0 0
+/cover_image/1707228724.jpg
+0 2 0 55949 0 0
+/cover_image/1706500002.jpg
+0 42 0 1107840 0 0
+/phpmyadmin/js/dist/navigation.js
+0 3 0 34521 0 0
+/phpmyadmin/themes/pmahomme/img/s_cog.png
+0 3 0 1470 0 0
+/cover_image/1706499692.jpg
+0 11 0 183780 0 0
+/api/FakeNewsInfo_show/103
+0 10 0 2936 0 0
+/phpmyadmin/themes/pmahomme/img/b_relations.png
+0 3 0 558 0 0
+/phpmyadmin/themes/pmahomme/img/s_host.png
+0 3 0 1917 0 0
+/phpmyadmin/js/vendor/codemirror/addon/lint/lint.css
+0 3 0 4053 0 0
+/phpmyadmin/themes/pmahomme/img/b_docs.png
+0 3 0 2259 0 0
+/phpmyadmin/themes/pmahomme/img/b_tblimport.png
+0 3 0 1848 0 0
+/phpmyadmin/js/vendor/jquery/jquery-ui.min.js
+0 3 0 204042 0 0
+/api/Article_show/43
+0 1 0 797 0 0
+/phpmyadmin/themes/pmahomme/img/s_vars.png
+0 4 0 2284 0 0
+/api/Adm_Article_request
+0 3 0 8046 0 0
+/api/Motivation_request
+0 438 0 117406 1 16
+/phpmyadmin/js/dist/sql.js
+0 3 0 29010 0 0
+/api/News_show/118
+0 2 0 2278 0 0
+/api/MdShare_request
+0 225 0 592383 9 5
+/cover_image/1707228002.jpg
+0 2 0 56010 0 0
+/api/Manage_Fake_Info_show/407
+0 1 0 404 0 0
+/phpmyadmin/js/dist/config.js
+0 3 0 19284 0 0
+/phpmyadmin/js/vendor/jquery/jquery.uitablefilter.js
+0 3 0 4253 0 0
+/api/MediaChannels_request
+0 1102 0 356422 3 25
+/phpmyadmin/themes/pmahomme/img/col_pointer.png
+0 3 0 444 0 0
+/phpmyadmin/themes/pmahomme/img/b_edit.png
+0 3 0 1275 0 0
+/phpmyadmin/themes/pmahomme/img/b_tblanalyse.png
+0 3 0 594 0 0
+/api/News_show/141
+0 6 2985723152615022693 2148 0 0
+/api/user
+0 1160 0 277085 62 18
+/api/News_show/121
+0 1 0 1723 0 0
+/api/Manage_Fake_Info_show/469
+0 63 0 24506 0 0
+/api/User_edit/24
+0 18 0 4829 0 0
+/api/FakeNewsInfo_upload
+0 3 0 894 0 0
+/api/ProblemManagement_request
+0 4 0 1582 0 1
+/cover_image/1707228724_65c23e3494b7f.jpg
+0 2 0 55917 0 0
+/phpmyadmin/themes/pmahomme/img/b_print.png
+0 3 0 2061 0 0
+/phpmyadmin/themes/pmahomme/img/b_ftext.png
+0 3 0 1794 0 0
+/phpmyadmin/themes/pmahomme/img/b_sqlhelp.png
+0 3 0 1677 0 0
+/phpmyadmin/themes/pmahomme/img/b_home.png
+0 3 0 2346 0 0
+/api/login
+0 7 0 2369 0 0
+/api/News_show/129
+0 2 0 833 0 0
+/phpmyadmin/js/vendor/js.cookie.js
+0 3 0 4740 0 0
+/phpmyadmin/js/dist/import.js
+0 1 0 1693 0 0
+/api/Province_request
+0 1410 0 382905 9 5
+/phpmyadmin/themes/pmahomme/img/b_chart.png
+0 3 0 1491 0 0
+/phpmyadmin/themes/pmahomme/img/b_select.png
+0 4 0 2564 0 0
+/api/News_show/138
+0 16 0 6864 0 0
+/phpmyadmin/themes/pmahomme/img/b_import.png
+0 4 0 2416 0 0
+/phpmyadmin/themes/pmahomme/img/b_empty.png
+0 4 0 2272 0 0
+/phpmyadmin/js/vendor/bootstrap/bootstrap.bundle.min.js
+0 3 0 70125 0 0
+/cover_image/1706499458.jpg
+0 11 0 301415 0 0
+/phpmyadmin/themes/pmahomme/img/b_triggers.png
+0 3 0 1482 0 0
+/phpmyadmin/themes/pmahomme/img/s_notice.png
+0 3 0 1845 0 0
+/phpmyadmin/themes/pmahomme/img/b_table_add.png
+0 3 0 1857 0 0
+/phpmyadmin/themes/pmahomme/img/bd_primary.png
+0 1 0 342 0 0
+/phpmyadmin/js/messages.php
+0 7 0 55934 0 0
+/phpmyadmin/js/vendor/jquery/jquery-ui-timepicker-addon.js
+0 3 0 56982 0 0
+/phpmyadmin/js/vendor/codemirror/lib/codemirror.js
+0 3 0 320736 0 0
+/api/Manage_Fake_Info_show/406
+0 103 0 40786 2 0
+/phpmyadmin/themes/pmahomme/img/bd_browse.png
+0 4 0 1272 0 0
+/phpmyadmin/themes/pmahomme/img/window-new.png
+0 3 0 1548 0 0
+/cover_image/1707228724_65c23e3494eed.jpg
+0 2 0 36414 0 0
+/api/Manage_Fake_Info_request
+0 1134 0 3138938 22 9
+/api/updateFakeNewsStatus/103
+0 2 0 481 0 0
+/api/Manage_Fake_Info_upload
+0 1 0 97 0 0
+/phpmyadmin/favicon.ico
+0 4 0 37607 0 0
+/phpmyadmin/js/dist/table/structure.js
+0 3 0 13885 0 0
+/phpmyadmin/themes/pmahomme/img/s_passwd.png
+0 1 0 379 0 0
+/phpmyadmin/js/dist/database/structure.js
+0 4 0 15568 0 0
+/phpmyadmin/themes/pmahomme/img/ajax_clock_small.gif
+0 3 0 5689 0 0
+/phpmyadmin/js/dist/cross_framing_protection.js
+0 3 0 954 0 0
+/api/Adm_News_update/139
+0 5 0 1340 1 0
+/phpmyadmin/themes/pmahomme/img/s_lock.png
+0 2 0 1569 0 0
+/phpmyadmin/themes/pmahomme/img/b_sql.png
+0 3 0 2184 0 0
+/phpmyadmin/js/dist/gis_data_editor.js
+0 3 0 10611 0 0
+/api/ManageInfo_request
+0 611 0 1564433 8 8
+/cover_image/1706494330.jpg
+0 35 0 1048995 0 0
+/phpmyadmin/js/vendor/codemirror/addon/hint/show-hint.js
+0 3 0 16779 0 0
+/phpmyadmin/themes/pmahomme/img/s_success.png
+0 3 0 1539 0 0
+/cover_image/1706499629.jpg
+0 11 0 301453 0 0
+/api/FakeNewsInfo_edit/104
+0 78 0 24293 0 0
+/phpmyadmin/js/vendor/codemirror/addon/hint/sql-hint.js
+0 3 0 8421 0 0
+/phpmyadmin/themes/pmahomme/img/b_tblexport.png
+0 3 0 1686 0 0
+/phpmyadmin/js/vendor/tracekit.js
+0 3 0 34998 0 0
+/api/Manage_Fake_Info_show/456
+0 15 0 6625 0 0
+/cover_image/1706499327.jpg
+0 11 0 306150 0 0
+/phpmyadmin/themes/pmahomme/img/b_index.png
+0 3 0 2073 0 0
+/api/register
+0 1 7018404078954034999 145 0 0
+/
+0 136 0 291433 122 15
+/api/News_show/116
+0 6 0 6468 0 0
+/phpmyadmin/themes/pmahomme/img/s_asci.png
+0 4 0 780 0 0
+/api/Adm_News_edit/139
+0 87 0 285768 1 0
+/phpmyadmin/themes/pmahomme/img/b_move.png
+0 3 0 1287 0 0
+/phpmyadmin/themes/pmahomme/img/s_theme.png
+0 1 0 820 0 0
+/cover_image/1707227089.jpg
+0 2 0 55963 0 0
+/phpmyadmin/js/dist/keyhandler.js
+0 3 0 2501 0 0
+/cover_image/1707228724_65c23e3494a59.jpg
+0 2 0 44482 0 0
+/cover_image/1706499681.jpg
+0 11 0 369908 0 0
+/phpmyadmin/themes/pmahomme/img/b_routines.png
+0 4 0 1416 0 0
+/cover_image/1706499821.jpg
+0 37 0 1759755 0 0
+/cover_image/1707228002_65c23b62ae221.jpg
+0 1 0 44519 0 0
+/phpmyadmin/themes/pmahomme/img/s_error.png
+0 1 0 716 0 0
+/api/Adm_News_upload
+0 14 0 3389 0 0
+/api/Tags_request
+0 437 0 883253 4 1
+/phpmyadmin/themes/pmahomme/img/s_reload.png
+0 3 0 1725 0 0
+/phpmyadmin/themes/pmahomme/img/normalize.png
+0 3 0 1659 0 0
+/phpmyadmin/themes/dot.gif
+0 3 0 360 0 0
+/phpmyadmin/themes/pmahomme/img/s_lang.png
+0 1 0 707 0 0
+/phpmyadmin/themes/pmahomme/img/s_collapseall.png
+0 3 0 570 0 0
+/cover_image/1707227124.jpg
+0 2 0 55963 0 0
+/phpmyadmin/themes/pmahomme/img/b_events.png
+0 4 0 3004 0 0
+/cover_image/1707227990.jpg
+0 2 0 55963 0 0
+/api/DataCharacteristics_request
+0 226 0 58057 6 0
+/phpmyadmin/themes/pmahomme/img/b_search.png
+0 3 0 1758 0 0
+/phpmyadmin/js/dist/indexes.js
+0 3 0 19089 0 0
+/robots.txt
+0 18 0 36906 0 0
+/phpmyadmin/themes/pmahomme/img/bd_select.png
+0 4 0 1492 0 0
+/phpmyadmin/themes/pmahomme/img/s_link.png
+0 3 0 981 0 0
+/api/MdShare_show/21
+0 1 0 761 0 0
+/api/News_show/128
+0 2 0 801 0 1
+/phpmyadmin/js/dist/table/operations.js
+0 1 0 2581 0 0
+/phpmyadmin/themes/pmahomme/img/s_tbl.png
+0 3 0 2115 0 0
+/api/User/29
+0 1 0 236 0 0
+/cover_image/1707226954.jpg
+0 2 0 55961 0 0
+/api/News_show/137
+0 1 0 421 0 0
+/phpmyadmin/js/vendor/codemirror/mode/sql/sql.js
+0 3 0 50712 0 0
+/fn_info_image/1706876153.jpg
+0 2 0 164970 0 0
+/phpmyadmin/js/dist/table/change.js
+0 3 0 24276 0 0
+/phpmyadmin/themes/pmahomme/img/s_fulltext.png
+0 3 0 669 0 0
+/api/Tags_upload
+0 29 0 3500 1 1
+/api/FakeNewsInfo_request
+0 37 0 93954 0 0
+/phpmyadmin/themes/pmahomme/img/b_tblops.png
+0 3 0 1755 0 0
+/cover_image/1707231286.jpg
+0 18 0 179213 0 0
+/cover_image/1707278690.jpg
+0 3 0 147980 0 0
+# End Of Table - urls
+# -sites- (monthly)
+135.148.195.5
+0 1 1 314 0 0
+-
+66.249.72.203
+0 8 8 45200 1 1706800169
+/api/ManageInfo_request
+35.87.111.15
+0 1 1 1354 1 1706989423
+/
+18.237.105.102
+0 1 1 1354 1 1706816877
+/
+34.220.106.33
+0 1 1 1403 1 1707343343
+/
+66.249.71.64
+0 1 1 314 0 0
+-
+66.249.71.68
+0 21 20 124877 8 1707297167
+/
+35.86.96.154
+0 1 1 1354 1 1706900904
+/
+35.88.58.213
+0 1 1 1354 1 1707072631
+/
+110.164.246.235
+0 138 115 3686156 2 1706904228
+/api/MdShare_request
+195.90.221.76
+0 1 1 1354 1 1706757104
+/
+43.135.166.178
+0 2 2 2722 2 1707211223
+/
+43.157.66.187
+0 2 2 2722 2 1707171046
+/
+35.230.33.154
+0 2 2 3093 1 1707050315
+/
+168.151.96.140
+0 12 12 653551 0 0
+-
+54.189.98.233
+0 1 1 1398 1 1706904720
+/
+34.245.69.177
+0 1 1 1521 1 1706763386
+/
+66.249.79.169
+0 5 5 19489 1 1706907290
+/api/Article_request
+66.249.66.43
+0 1 1 1398 1 1707285519
+/
+170.231.251.37
+0 1 1 4880 1 1707146912
+/
+18.142.128.26
+0 1 1 4925 1 1706903938
+/
+66.249.65.105
+0 7 5 318377 1 1707040118
+/api/user
+66.249.71.65
+0 1 1 338 0 0
+-
+66.249.79.167
+0 1 1 4880 1 1706908455
+/
+199.244.88.231
+0 1 1 1354 1 1706789533
+/
+66.249.66.42
+0 4 4 23541 1 1707267159
+/api/Manage_Fake_Info_request
+123.60.68.42
+0 3 3 4062 3 1707287169
+/
+66.249.65.107
+0 2 2 9620 1 1707040112
+/api/Article_request
+58.49.233.126
+0 1 1 1361 1 1707202613
+/
+182.52.115.81
+0 703 510 2109650 4 1707088474
+/phpmyadmin/
+66.249.72.202
+0 10 9 53281 1 1706800170
+/api/Article_request
+43.130.32.224
+0 1 1 1361 1 1706857928
+/
+191.102.155.184
+0 1 1 1361 1 1707160700
+/
+171.7.246.66
+0 34 23 530012 1 1706911493
+/api/TypeInformation_request
+43.157.40.112
+0 2 2 2722 2 1707290632
+/
+66.249.72.205
+0 1 1 1398 1 1706805086
+/
+43.134.37.211
+0 1 1 1361 1 1706944332
+/
+52.34.73.19
+0 1 1 4997 1 1707131075
+/
+3.144.226.212
+0 2 2 1712 1 1706910244
+/
+66.249.65.100
+0 1 1 1398 1 1706814324
+/
+91.92.253.104
+0 1 1 1398 1 1706830527
+/
+66.249.79.171
+0 5 3 306515 1 1706907291
+/api/user
+34.219.236.233
+0 1 1 3751 0 0
+-
+180.149.19.193
+0 8 7 27185 1 1707142009
+/api/Manage_Fake_Info_request
+52.81.187.72
+0 36 25 1035672 2 1707195092
+/api/TypeInformation_request
+205.169.39.168
+0 8 6 121739 1 1707204276
+/api/user
+34.212.40.207
+0 1 1 3459 1 1707072677
+/
+216.251.130.74
+0 2 2 2796 2 1707298914
+/
+34.222.249.95
+0 1 1 1354 1 1706901120
+/
+66.249.71.193
+0 1 1 3819 0 0
+-
+66.249.72.201
+0 19 14 955204 1 1706800173
+/api/MediaChannels_request
+130.255.166.97
+0 1 1 1361 1 1707018550
+/
+35.88.112.219
+0 1 1 4835 1 1707163103
+/
+44.234.42.53
+0 7 5 21675 1 1707158062
+/api/user
+205.169.39.194
+0 2 2 5246 1 1707204164
+/
+95.217.18.177
+0 2 2 8375 2 1707303108
+/
+222.249.228.245
+0 2 2 1712 1 1706899258
+/
+18.236.152.43
+0 1 1 4836 1 1707246234
+/
+87.103.246.30
+0 1 1 1129 1 1706945487
+/
+66.249.72.204
+0 1 1 1398 1 1706805766
+/
+34.208.25.140
+0 1 1 1398 1 1707171793
+/
+58.64.14.54
+0 7926 6274 24369197 60 1707304931
+/api/FakeNewsInfo_request
+52.39.249.154
+0 1 1 1354 1 1707246235
+/
+35.161.173.55
+0 1 1 1398 1 1707077792
+/
+170.106.159.160
+0 2 2 2722 2 1707204354
+/
+66.249.79.170
+0 1 0 292279 1 1706952917
+/api/user
+179.104.248.149
+0 1 1 4879 1 1707156317
+/
+35.89.228.63
+0 1 1 1398 1 1706995837
+/
+34.209.166.24
+0 1 1 1398 1 1707250921
+/
+66.249.65.106
+0 1 1 6371 1 1707040112
+/api/MdShare_request
+61.19.78.120
+0 43 24 105533 1 1706777660
+/api/Article_request
+66.249.72.67
+0 5 5 33121 2 1707215028
+/api/MediaChannels_request
+66.249.72.206
+0 1 1 1398 1 1706805086
+/
+66.249.72.69
+0 4 4 31862 2 1707215022
+/api/News_request
+3.143.227.226
+0 2 2 1717 1 1707348371
+/
+35.162.57.171
+0 1 1 4836 1 1706900231
+/
+43.131.248.209
+0 2 2 2722 2 1707039933
+/
+206.189.143.129
+0 2 0 13808 0 0
+-
+43.131.62.4
+0 1 1 1361 1 1707269392
+/
+165.232.83.246
+0 2 2 6190 1 1706821727
+/
+43.135.149.154
+0 2 2 2722 2 1707095431
+/
+34.212.22.150
+0 7 5 21776 1 1707245951
+/api/user
+43.131.48.214
+0 1 1 1366 1 1707343950
+/
+43.159.128.149
+0 1 1 1361 1 1706951232
+/
+54.189.135.99
+0 1 1 4835 1 1706816840
+/
+43.130.39.101
+0 1 1 1361 1 1707031156
+/
+43.153.93.68
+0 1 1 1361 1 1706779033
+/
+129.226.146.179
+0 1 1 1361 1 1706998146
+/
+66.249.66.41
+0 3 2 13149 2 1707295806
+/
+190.123.209.145
+0 1 1 1361 1 1707146924
+/
+3.253.235.8
+0 1 1 5001 1 1707131083
+/
+54.172.237.43
+0 25 23 969799 2 1706946238
+/api/TypeInformation_request
+35.89.36.62
+0 1 1 1354 1 1706816842
+/
+52.36.34.229
+0 1 1 1354 1 1707163018
+/
+202.29.145.145
+0 2 2 13825 1 1706904167
+/api/Article_request
+170.247.223.117
+0 1 1 1136 1 1707146916
+/
+43.133.77.230
+0 1 1 1361 1 1706911630
+/
+34.106.38.182
+0 21 3 129078 1 1707221187
+/
+35.94.108.240
+0 9 7 24312 1 1706753951
+-
+54.68.96.144
+0 1 1 1398 1 1706867416
+/
+34.72.176.129
+0 13 11 316349 1 1707203265
+/
+54.212.166.151
+0 17 15 520325 1 1706984153
+/api/MediaChannels_request
+23.22.13.34
+0 24 22 968802 1 1707193261
+/api/TypeInformation_request
+54.158.12.123
+0 24 22 968845 1 1707193441
+/api/TypeInformation_request
+93.123.39.188
+0 1 1 4998 1 1706750927
+/
+66.249.71.69
+0 10 10 57702 6 1707267158
+/api/Manage_Fake_Info_request
+35.82.33.76
+0 6 5 0 1 1707337552
+/api/Manage_Fake_Info_request
+43.130.47.136
+0 2 2 2722 2 1707297349
+/
+66.249.68.67
+0 5 5 18600 1 1707119055
+/api/MediaChannels_request
+122.154.61.145
+0 176 157 3020430 3 1706904077
+/api/TypeInformation_request
+168.151.199.116
+0 1 1 1008 1 1707141852
+/
+54.246.225.232
+0 1 1 5001 1 1707129524
+/
+66.249.71.204
+0 1 1 1398 1 1706804938
+/
+34.97.48.18
+0 24 22 968902 2 1707202491
+/api/user
+43.155.152.154
+0 1 1 1361 1 1706825172
+/
+213.188.94.52
+0 1 1 1398 1 1707142072
+/
+35.93.3.120
+0 1 1 1359 1 1707332186
+/
+35.89.193.6
+0 2 2 1712 1 1706780319
+/
+35.88.8.104
+0 7 5 21381 1 1706856564
+/api/user
+193.233.233.29
+0 2 2 9671 2 1706891579
+/
+182.52.115.46
+0 1410 1100 3772297 12 1707265128
+/api/Adm_News_update/139
+135.148.195.1
+0 1 1 314 0 0
+-
+54.223.89.173
+0 33 25 981408 2 1707195621
+/api/TypeInformation_request
+66.249.72.68
+0 11 7 622473 2 1707215028
+/api/TypeInformation_request
+52.37.169.196
+0 17 15 514563 1 1707071847
+/api/MediaChannels_request
+138.246.253.24
+0 1 1 3776 0 0
+-
+209.127.110.69
+0 1 1 277 0 0
+-
+170.106.82.193
+0 1 1 1361 1 1706922805
+/
+43.155.160.173
+0 1 1 1361 1 1706883916
+/
+35.86.86.190
+0 2 2 2722 1 1706778429
+/
+43.130.7.211
+0 1 1 1361 1 1707182236
+/
+170.106.171.77
+0 1 1 1361 1 1707084643
+/
+34.201.145.153
+0 1 1 277 0 0
+-
+182.52.114.99
+0 50 32 1827968 1 1707265411
+-
+54.187.22.137
+0 1 1 4836 1 1707163165
+/
+35.90.228.255
+0 1 1 1354 1 1707163080
+/
+130.255.166.90
+0 1 1 301 0 0
+-
+5.133.192.131
+0 2 2 8587 1 1706975995
+/
+208.80.194.42
+0 1 1 1521 1 1707159309
+/
+34.221.156.254
+0 1 1 1354 1 1706780317
+/
+171.7.224.27
+0 44 0 10708638 1 1707348192
+/api/user
+66.249.71.67
+0 22 19 683128 7 1707267164
+/api/TypeInformation_request
+159.65.87.221
+0 2 2 6189 1 1706991240
+/
+216.244.66.231
+0 4 4 3653 2 1707323422
+/
+66.249.71.206
+0 1 1 338 0 0
+-
+43.159.128.172
+0 1 1 1361 1 1707043309
+/
+91.92.245.204
+0 3 3 4060 2 1706831217
+/
+15.204.194.30
+0 1 1 1354 1 1706923142
+/
+104.236.9.21
+0 2 2 6190 1 1707127773
+/
+52.80.71.82
+0 36 25 1035169 3 1706841818
+/api/TypeInformation_request
+52.80.95.20
+0 33 25 980859 2 1706841398
+/api/TypeInformation_request
+66.249.68.69
+0 3 3 28358 1 1707119051
+/api/Manage_Fake_Info_request
+13.82.54.38
+0 2 2 2722 1 1706826557
+/
+130.255.166.24
+0 1 0 2386 0 0
+-
+34.217.85.238
+0 1 1 1398 1 1706778428
+/
+52.42.130.153
+0 17 15 507582 1 1706899919
+/api/user
+135.148.195.10
+0 1 1 1354 1 1707269937
+/
+113.53.179.251
+0 1111 986 7965501 3 1706904315
+/phpmyadmin/
+54.36.148.31
+0 1 1 146 0 0
+-
+180.149.21.251
+0 12 10 315253 1 1707141856
+/api/user
+34.216.154.65
+0 1 1 4835 1 1706900160
+/
+104.197.69.115
+0 12 12 653528 0 0
+-
+66.249.65.101
+0 3 3 4194 1 1706814453
+/
+43.135.129.233
+0 1 1 1361 1 1707257515
+/
+49.51.179.103
+0 1 1 1361 1 1707117420
+/
+54.185.162.150
+0 1 1 4835 1 1706989387
+/
+66.249.71.66
+0 1 1 338 0 0
+-
+66.249.68.68
+0 6 5 313479 2 1707119056
+/api/TypeInformation_request
+130.255.166.82
+0 1 0 2386 0 0
+-
+34.97.143.153
+0 24 22 968894 1 1707202445
+/api/TypeInformation_request
+3.128.76.217
+0 23 22 968140 2 1706937059
+/api/TypeInformation_request
+1.10.223.243
+0 151 111 1148776 5 1707345518
+/phpmyadmin/
+182.52.255.6
+0 1056 838 5912122 6 1707177274
+/api/Province_request
+113.53.179.47
+0 248 221 836732 3 1706825115
+/api/TypeInformation_request
+# End Of Table - sites (monthly)
+# -sites- (daily)
+135.148.195.5
+0 1 1 314 0 0
+-
+34.220.106.33
+0 1 1 1403 1 1707343343
+/
+66.249.71.68
+0 3 3 11754 2 1707297167
+/
+66.249.66.43
+0 1 1 1398 1 1707285519
+/
+66.249.66.42
+0 4 4 23541 1 1707267159
+/api/Manage_Fake_Info_request
+123.60.68.42
+0 1 1 1354 1 1707287169
+/
+43.157.40.112
+0 1 1 1361 1 1707290632
+/
+216.251.130.74
+0 1 1 1398 1 1707298914
+/
+95.217.18.177
+0 1 1 4190 1 1707303108
+/
+58.64.14.54
+0 870 667 6792454 8 1707304931
+/api/FakeNewsInfo_request
+3.143.227.226
+0 2 2 1717 1 1707348371
+/
+43.131.62.4
+0 1 1 1361 1 1707269392
+/
+43.131.48.214
+0 1 1 1366 1 1707343950
+/
+66.249.66.41
+0 3 2 13149 2 1707295806
+/
+66.249.71.69
+0 1 1 6688 1 1707267158
+/api/Manage_Fake_Info_request
+35.82.33.76
+0 6 5 0 1 1707337552
+/api/Manage_Fake_Info_request
+43.130.47.136
+0 1 1 1361 1 1707297349
+/
+35.93.3.120
+0 1 1 1359 1 1707332186
+/
+182.52.115.46
+0 144 104 464319 3 1707265128
+/api/Adm_News_update/139
+182.52.114.99
+0 50 32 1827968 1 1707265411
+-
+171.7.224.27
+0 44 0 10708638 1 1707348192
+/api/user
+66.249.71.67
+0 4 3 307220 1 1707267164
+/api/TypeInformation_request
+216.244.66.231
+0 2 2 1843 1 1707323422
+/
+135.148.195.10
+0 1 1 1354 1 1707269937
+/
+66.249.71.66
+0 1 1 338 0 0
+-
+1.10.223.243
+0 151 111 1148776 5 1707345518
+/phpmyadmin/
+# End Of Table - sites (daily)
+# -referrers- 
+https://checkkonproject.com/
+0 1261
+http://checkkonproject-sub.com
+0 1
+https://checkkonproject-sub.com/api/Manage_Fake_Info_edit/406
+0 1
+http://checkkonproject-sub.com/axis2/
+0 2
+https://www.checkkonproject.com/
+0 131
+https://checkkonproject-sub.com/api/User/26
+0 1
+- (Direct Request)
+0 700
+https://checkkonproject-sub.com/axis2/axis2-admin/
+0 2
+http://www.checkkonproject.com/
+0 404
+https://checkkonproject-sub.com/phpmyadmin/themes/pmahomme/jquery/jquery-ui.css
+0 2
+https://checkkonproject-sub.com/axis2/
+0 2
+https://checkkonproject-sub.com/api/AmUser
+0 1
+checkkonproject-sub.com
+0 2
+http://checkkonproject-sub.com/axis2/axis2-admin/
+0 2
+http://checkkonproject-sub.com/
+0 1
+https://www.checkkonproject-sub.com/phpmyadmin/themes/pmahomme/css/theme.css
+0 147
+http://checkkonproject-sub.com/axis2-admin/
+0 2
+https://checkkonproject-sub.com/axis2-admin/
+0 2
+http://localhost:3000/
+0 10794
+http://checkkonproject.com/
+0 320
+https://checkkonproject-sub.com/phpmyadmin/themes/pmahomme/css/theme.css
+0 68
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (Linux; Android 13; SM-A037U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+0 3
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.137
+0 1
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36
+0 1
+Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; SLC
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36
+0 9
+Mozilla/5.0 (Linux; Android 10; SM-G981B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Mobile Safari/537.36
+0 1
+Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
+0 3
+Mozilla/5.0 (Macintosh; Intel Mac OS X 9_1) AppleWebKit/602.49 (KHTML, like Gecko) Chrome/79.0.1455 Safari/537.36
+0 1
+Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50728)
+0 1
+Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.85 Mobile 
+0 81
+Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Mobile S
+0 2
+Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+0 8
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+0 1293
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
+0 30
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+0 15
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/11.0.696.71 Safari/534.24
+0 2
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0
+0 7810
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36
+0 1
+Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/60
+0 34
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/568.39 (KHTML, like Gecko) Chrome/104.0.157 Safari/537.36
+0 1
+Mozilla/5.0 (Linux; Android 10; SM-G985F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 9_2_2; Win64; x64) AppleWebKit/583.54 (KHTML, like Gecko) Chrome/91.0.2995 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.182
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+0 4
+Mozilla/5.0 (Macintosh; Intel Mac OS X 8_0) AppleWebKit/571.39 (KHTML, like Gecko) Chrome/51.0.1502 Safari/537.36
+0 23
+Mozilla/5.0 (Windows NT 9.4; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.2283.88 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/68.0.3440.106 Safari/537.36
+0 87
+Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0
+0 249
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/99.0.4844.0 Safari/537.36
+0 24
+Mozilla/5.0 (Windows NT 7.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3297.88 Safari/537.36
+0 1
+Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)
+0 1
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/120.0.6
+0 31
+Mozilla/5.0 (Macintosh; Intel Mac OS X 9_1_2) AppleWebKit/556.53 (KHTML, like Gecko) Chrome/58.0.1803 Safari/537.36
+0 1
+Googlebot-Image/1.0
+0 2
+Mozilla/5.0 (Macintosh; Intel Mac OS X 9_0_2) AppleWebKit/547.53 (KHTML, like Gecko) Chrome/70.0.2044 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/572.44 (KHTML, like Gecko) Chrome/83.0.370 Safari/537.36
+0 23
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36
+0 19
+Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 
+0 34
+Mozilla/5.0 (Windows NT 7_1_2; Win64; x64) AppleWebKit/584.38 (KHTML, like Gecko) Chrome/72.0.2754 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/110.0.5481.100 Safari/537.36
+0 2
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 9_1_1) AppleWebKit/583.44 (KHTML, like Gecko) Chrome/89.0.2828 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/548.38 (KHTML, like Gecko) Chrome/82.0.965 Safari/537.36
+0 23
+Mozilla/5.0 (Linux; Android 9; Redmi Note 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36
+0 1
+Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.224 Mobile
+0 24
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+0 1
+Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E14
+0 68
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+0 23
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0
+0 78
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36
+0 68
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/121.0.6
+0 12
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0
+0 26
+Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Sa
+0 4
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/565.38 (KHTML, like Gecko) Chrome/80.0.1775 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/85.0.4182.0 Safari/537.36
+0 48
+Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/
+0 82
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/597.35 (KHTML, like Gecko) Chrome/102.0.1600 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.3
+0 3
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/565.36 (KHTML, like Gecko) Chrome/53.0.669 Safari/537.36
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 7_2_1; Win64; x64) AppleWebKit/601.53 (KHTML, like Gecko) Chrome/70.0.2794 Safari/537.36
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 8_0_2) AppleWebKit/545.40 (KHTML, like Gecko) Chrome/68.0.2316 Safari/537.36
+0 1
+undici
+0 1
+Mozilla/5.0 (compatible; DotBot/1.2; +https://opensiteexplorer.org/dotbot; help@moz.com)
+0 4
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36 Edg/91.0.
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 12_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15
+0 1
+python-requests/2.21.0
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.5938.132 Safari/537.36
+0 73
+Mozilla/5.0 (Macintosh; Intel Mac OS X 9_2) AppleWebKit/563.46 (KHTML, like Gecko) Chrome/82.0.1591 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+0 3417
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36
+0 2
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+0 2
+Mozilla/5.0 (Windows NT 9_1_1; Win64; x64) AppleWebKit/597.41 (KHTML, like Gecko) Chrome/58.0.2836 Safari/537.36
+0 1
+Apache-HttpClient/5.1.4 (Java/11.0.18)
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/589.44 (KHTML, like Gecko) Chrome/51.0.2138 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 5.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3553.88 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.199 Safari/537.36
+0 27
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/242.02.8301.120 Safari/537.36
+0 2
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36
+0 2
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/601.55 (KHTML, like Gecko) Chrome/95.0.840 Safari/537.36
+0 23
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/572.41 (KHTML, like Gecko) Chrome/89.0.1010 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+0 6
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames
