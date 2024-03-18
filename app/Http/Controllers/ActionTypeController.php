@@ -24,26 +24,6 @@ class ActionTypeController extends Controller
         return response()->json(['message' => 'Data received and processed'], 200);
     }
 
-
-    public function create()
-    {
-        return view('ActionType.create');
-    }
-
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'act_ty_name' => 'required',
-            // Add more validation rules as needed
-        ]);
-
-        $actionType = new ActionType();
-        $actionType->act_ty_name = $validatedData['act_ty_name'];
-        $actionType->save();
-
-        return redirect()->route('action_type.index')->with('success', 'ActionType created successfully');
-    }
-
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
